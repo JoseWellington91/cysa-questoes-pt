@@ -219,7 +219,8 @@ export default defineConfig({
   // Use relative base so the build works on GitHub Pages under any subpath
   base: "./",
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // Output to docs/ at repo root for GitHub Pages "Deploy from branch" mode
+    outDir: path.resolve(import.meta.dirname, "docs"),
     emptyOutDir: true,
   },
   server: {

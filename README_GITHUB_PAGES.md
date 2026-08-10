@@ -1,49 +1,58 @@
 # Guia de Publicação no GitHub Pages
 
+## Visão geral
+
+O projeto está configurado para que o build estático saia na pasta `docs/` na raiz do repositório. Isso permite usar o GitHub Pages no modo **"Deploy from branch"**, sem precisar do GitHub Actions.
+
 ## Passo a passo
 
-### 1. Criar o repositório no GitHub
-
-Crie um repositório (pode ser público ou privado) no GitHub. Se quiser que o site fique na URL raiz (`https://seu-usuario.github.io`), nomeie o repositório como `seu-usuario.github.io`. Caso contrário, o site ficará em `https://seu-usuario.github.io/nome-do-repo`.
-
-### 2. Enviar o código
+### 1. Fazer o build
 
 ```bash
-git init
-git add .
-git commit -m "CySA+ Questões - deploy no GitHub Pages"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/SEU_REPO.git
-git push -u origin main
+pnpm install
+NODE_ENV=production pnpm run build
 ```
+
+Os arquivos estáticos serão gerados na pasta `docs/`.
+
+### 2. Enviar para o GitHub
+
+```bash
+git add docs/
+git commit -m "Build estático para GitHub Pages"
+git push origin main
+```
+
+> A pasta `docs/` **não** está no `.gitignore`, então ela será enviada para o repositório.
 
 ### 3. Habilitar o GitHub Pages
 
-1. Vá em **Settings** > **Pages** no repositório
-2. Em **Source**, selecione **GitHub Actions**
-3. O workflow `.github/workflows/deploy.yml` fará o build e deploy automaticamente
+1. Vá em **Settings > Pages** no repositório
+2. Em **Source**, selecione **Deploy from branch**
+3. Selecione a branch **`main`** e a pasta **`/docs`**
+4. Clique em **Save**
 
 ### 4. Acessar o site
 
-Após o workflow concluir (verifique na aba **Actions**), acesse:
+Após alguns minutos, acesse:
 
 ```
 https://SEU_USUARIO.github.io/SEU_REPO/
 ```
 
-## Build manual (alternativa)
+## Estrutura do build
 
-Se preferir fazer o build localmente e enviar os arquivos estáticos:
-
-```bash
-pnpm install
-pnpm run build
 ```
-
-Os arquivos estarão em `dist/public/`. Copie o conteúdo dessa pasta para a branch `gh-pages` ou use o método de sua preferência.
+docs/
+  index.html      ← página principal (com caminhos relativos ./assets/...)
+  404.html        ← redirect SPA para rotas client-side
+  assets/
+    index-*.css   ← estilos
+    index-*.js    ← aplicação React
+```
 
 ## Notas
 
-- O projeto usa `base: "./"` no Vite, então os caminhos dos assets são relativos e funcionam em qualquer subpath.
-- O arquivo `404.html` no diretório `public` faz o redirect SPA para que rotas client-side funcionem no GitHub Pages.
-- O roteamento usa wouter, que é compatível com GitHub Pages.
+- O `base: "./"` no Vite garante que todos os caminhos de assets sejam relativos, funcionando em qualquer subpath.
+- O `404.html` faz o redirect SPA para que o roteamento client-side (wouter) funcione no GitHub Pages.
+- Sempre rode `NODE_ENV=production pnpm run build` antes de enviar para garantir que scripts de debug não sejam incluídos.

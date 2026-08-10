@@ -6,6 +6,7 @@
 dist/
 build/
 *.dist
+# NOTE: docs/ is NOT ignored — it contains the GitHub Pages build output
 
 # Environment variables
 .env
