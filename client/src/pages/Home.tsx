@@ -19,7 +19,23 @@ import {
   ListChecks,
   Clock,
   Brain,
+  Filter,
 } from "lucide-react";
+
+const MODULE_RANGES: { label: string; start: number; end: number }[] = [
+  { label: "Todos", start: 1, end: 103 },
+  { label: "Mód 1: Controles & Risco", start: 1, end: 21 },
+  { label: "Mód 2: Threat Intel & Hunting", start: 22, end: 48 },
+  { label: "Mód 3: Infra & Arquitetura", start: 49, end: 69 },
+  { label: "Mód 4: Automação & SOC", start: 70, end: 81 },
+  { label: "Mód 5: Vulnerability Mgmt", start: 82, end: 103 },
+];
+
+function getFilteredQuestions(moduleFilter: string): Question[] {
+  const mod = MODULE_RANGES.find((m) => m.label === moduleFilter);
+  if (!mod || mod.label === "Todos") return questions;
+  return questions.filter((q) => q.id >= mod.start && q.id <= mod.end);
+}
 
 type AnswerState = Record<number, Set<string>>;
 
@@ -29,20 +45,26 @@ export default function Home() {
   const [submitted, setSubmitted] = useState<Record<number, boolean>>({});
   const [showResults, setShowResults] = useState(false);
   const [examMode, setExamMode] = useState(false);
+  const [moduleFilter, setModuleFilter] = useState("Todos");
 
-  const currentQuestion = questions[currentIndex];
-  const totalQuestions = questions.length;
+  const filteredQuestions = useMemo(
+    () => getFilteredQuestions(moduleFilter),
+    [moduleFilter]
+  );
+
+  const currentQuestion = filteredQuestions[currentIndex];
+  const totalQuestions = filteredQuestions.length;
 
   const selectedAnswers = useMemo(
-    () => answers[currentQuestion.id] ?? new Set<string>(),
-    [answers, currentQuestion.id]
+    () => answers[currentQuestion?.id ?? -1] ?? new Set<string>(),
+    [answers, currentQuestion?.id]
   );
 
   const isSubmitted = submitted[currentQuestion.id] ?? false;
 
   const toggleAnswer = useCallback(
     (letter: string) => {
-      if (isSubmitted) return;
+      if (isSubmitted || !currentQuestion) return;
       setAnswers((prev) => {
         const newAnswers = { ...prev };
         const currentSet = new Set(prev[currentQuestion.id] ?? new Set<string>());
@@ -64,9 +86,9 @@ export default function Home() {
   );
 
   const handleSubmit = useCallback(() => {
-    if (selectedAnswers.size === 0) return;
+    if (selectedAnswers.size === 0 || !currentQuestion) return;
     setSubmitted((prev) => ({ ...prev, [currentQuestion.id]: true }));
-  }, [selectedAnswers, currentQuestion.id]);
+  }, [selectedAnswers, currentQuestion?.id]);
 
   const goToQuestion = useCallback(
     (index: number) => {
@@ -96,13 +118,21 @@ export default function Home() {
     setCurrentIndex(0);
   }, []);
 
+  const handleModuleChange = useCallback((mod: string) => {
+    setModuleFilter(mod);
+    setAnswers({});
+    setSubmitted({});
+    setShowResults(false);
+    setCurrentIndex(0);
+  }, []);
+
   const answeredCount = useMemo(
     () => Object.keys(answers).filter((id) => answers[+id].size > 0).length,
     [answers]
   );
 
   const correctCount = useMemo(() => {
-    return questions.filter((q) => {
+    return filteredQuestions.filter((q) => {
       const userAnswers = answers[q.id] ?? new Set<string>();
       if (userAnswers.size === 0) return false;
       const correctLetters = q.options
@@ -119,7 +149,7 @@ export default function Home() {
   );
 
   const isCurrentCorrect = useMemo(() => {
-    if (!isSubmitted) return false;
+    if (!isSubmitted || !currentQuestion) return false;
     const correctLetters = currentQuestion.options
       .filter((o) => o.correct)
       .map((o) => o.letter);
@@ -136,9 +166,10 @@ export default function Home() {
         correctCount={correctCount}
         totalQuestions={totalQuestions}
         answers={answers}
+        filteredQuestions={filteredQuestions}
         onReset={handleReset}
         onReview={(id) => {
-          const idx = questions.findIndex((q) => q.id === id);
+          const idx = filteredQuestions.findIndex((q) => q.id === id);
           if (idx >= 0) {
             setShowResults(false);
             setCurrentIndex(idx);
@@ -189,9 +220,25 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Progress bar */}
+      {/* Module filter + Progress bar */}
       <div className="border-b border-border bg-card/40">
         <div className="container py-3">
+          <div className="flex items-center gap-2 mb-3 overflow-x-auto pb-1">
+            <Filter className="w-3.5 h-3.5 text-primary shrink-0" />
+            {MODULE_RANGES.map((mod) => (
+              <button
+                key={mod.label}
+                onClick={() => handleModuleChange(mod.label)}
+                className={`font-mono-display text-xs px-3 py-1.5 rounded-md whitespace-nowrap transition-all ${
+                  moduleFilter === mod.label
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-muted-foreground border border-border hover:border-primary/30"
+                }`}
+              >
+                {mod.label}
+              </button>
+            ))}
+          </div>
           <div className="flex items-center justify-between mb-2">
             <span className="font-mono-display text-xs text-muted-foreground">
               Progresso: {answeredCount}/{totalQuestions}
@@ -406,7 +453,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="grid grid-cols-5 gap-2">
-                {questions.map((q, idx) => {
+                {filteredQuestions.map((q, idx) => {
                   const userAns = answers[q.id] ?? new Set<string>();
                   const isAnswered = userAns.size > 0;
                   const isSubmittedQ = submitted[q.id] ?? false;
@@ -481,7 +528,7 @@ export default function Home() {
       <div className="lg:hidden border-t border-border bg-card/80 backdrop-blur-xl sticky bottom-0">
         <div className="container py-3">
           <div className="flex items-center gap-2 overflow-x-auto pb-1">
-            {questions.map((q, idx) => {
+            {filteredQuestions.map((q, idx) => {
               const userAns = answers[q.id] ?? new Set<string>();
               const isAnswered = userAns.size > 0;
               const isSubmittedQ = submitted[q.id] ?? false;
@@ -527,12 +574,14 @@ function ResultsScreen({
   correctCount,
   totalQuestions,
   answers,
+  filteredQuestions,
   onReset,
   onReview,
 }: {
   correctCount: number;
   totalQuestions: number;
   answers: AnswerState;
+  filteredQuestions: Question[];
   onReset: () => void;
   onReview: (id: number) => void;
 }) {
@@ -606,14 +655,14 @@ function ResultsScreen({
               </span>
             </div>
             <div className="space-y-2">
-              {questions.map((q, idx) => {
+              {filteredQuestions.map((q: Question, idx: number) => {
                 const userAns = answers[q.id] ?? new Set<string>();
                 const correctLetters = q.options
-                  .filter((o) => o.correct)
-                  .map((o) => o.letter);
+                  .filter((o: { correct: boolean; letter: string }) => o.correct)
+                  .map((o: { correct: boolean; letter: string }) => o.letter);
                 const isCorrect =
                   userAns.size === correctLetters.length &&
-                  correctLetters.every((l) => userAns.has(l));
+                  correctLetters.every((l: string) => userAns.has(l));
                 const isAnswered = userAns.size > 0;
 
                 return (
