@@ -203,7 +203,14 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+// For GitHub Pages production build, only use essential plugins
+// Manus runtime/debug/storage plugins are dev-only and not needed for static deploy
+const isDev = process.env.NODE_ENV !== "production";
+const plugins = [
+  react(),
+  tailwindcss(),
+  ...(isDev ? [jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()] : []),
+];
 
 export default defineConfig({
   plugins,
@@ -219,9 +226,9 @@ export default defineConfig({
   // Use relative base so the build works on GitHub Pages under any subpath
   base: "./",
   build: {
-    // Output to docs/ at repo root for GitHub Pages "Deploy from branch" mode
-    outDir: path.resolve(import.meta.dirname, "docs"),
-    emptyOutDir: true,
+    // Output to repo root for GitHub Pages "Deploy from branch" mode
+    outDir: path.resolve(import.meta.dirname),
+    emptyOutDir: false,
   },
   server: {
     port: 3000,
