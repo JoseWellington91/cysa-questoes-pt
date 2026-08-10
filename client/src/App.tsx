@@ -6,7 +6,9 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
-
+// Use hash-based routing for GitHub Pages compatibility
+// GitHub Pages serves static files only, so client-side routing
+// must use the hash portion of the URL to avoid 404 on refresh.
 function Router() {
   return (
     <Switch>
@@ -21,9 +23,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="dark"
-      >
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
           <Router />
