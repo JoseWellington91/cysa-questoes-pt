@@ -23,12 +23,14 @@ import {
 } from "lucide-react";
 
 const MODULE_RANGES: { label: string; start: number; end: number }[] = [
-  { label: "Todos", start: 1, end: 103 },
+  { label: "Todos", start: 1, end: 132 },
   { label: "Mód 1: Controles & Risco", start: 1, end: 21 },
   { label: "Mód 2: Threat Intel & Hunting", start: 22, end: 48 },
   { label: "Mód 3: Infra & Arquitetura", start: 49, end: 69 },
   { label: "Mód 4: Automação & SOC", start: 70, end: 81 },
   { label: "Mód 5: Vulnerability Mgmt", start: 82, end: 103 },
+  { label: "Mód 6: CVSS & Priorização", start: 104, end: 118 },
+  { label: "Mód 7: Relatórios & Gestão", start: 119, end: 132 },
 ];
 
 function getFilteredQuestions(moduleFilter: string): Question[] {
