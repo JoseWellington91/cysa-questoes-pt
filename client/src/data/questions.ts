@@ -1381,4 +1381,414 @@ export const questions: Question[] = [
     ],
     explanation: "Scanners baseados em agente são instalados no sistema que inspecionam, fornecendo acesso direto aos recursos do sistema. Podem monitorar continuamente em tempo real. Operam independentemente da conectividade de rede. Embora operem localmente, ainda precisam se comunicar com o servidor central, gerando tráfego de rede. Não garantem que não afetam a largura de banda.",
   },
+  {
+    id: 104,
+    category: "CVSS",
+    question: "Uma empresa financeira sofreu uma violação de segurança, e profissionais de cibersegurança precisam analisar os dados para priorizar vulnerabilidades e identificar os vetores de ataque usados por criminosos cibernéticos. Como o Common Vulnerability Scoring System (CVSS) pode ajudar nesse processo?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Pode ajudar a priorizar as etapas de remediação para prevenir incidentes de segurança.", correct: true },
+      { letter: "B", text: "Pode prevenir ataques de phishing identificando e bloqueando e-mails suspeitos.", correct: false },
+      { letter: "C", text: "Pode melhorar o desempenho da rede, reduzindo a probabilidade de um ataque bem-sucedido.", correct: false },
+      { letter: "D", text: "Não tem impacto direto na prevenção de ciberataques.", correct: false },
+    ],
+    explanation: "O CVSS fornece uma abordagem estruturada para priorizar vulnerabilidades com base em sua gravidade. Ele ajuda a quantificar os dados de vulnerabilidade e considerar o grau de risco para diferentes sistemas ou informações, apoiando a priorização das etapas de remediação. O CVSS não bloqueia e-mails de phishing nem melhora diretamente o desempenho da rede.",
+  },
+
+  {
+    id: 105,
+    category: "CVSS",
+    question: "Um centro de operações de segurança está respondendo a um alerta: um membro da equipe encontrou um pendrive conectado a um computador. A empresa possui uma política que proíbe o uso de pendrives nos computadores corporativos. A que métrica do CVSS essa política se refere?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Escopo", correct: false },
+      { letter: "B", text: "Vetores de ataque", correct: true },
+      { letter: "C", text: "Interação do usuário", correct: false },
+      { letter: "D", text: "Disponibilidade", correct: false },
+    ],
+    explanation: "A política se refere aos vetores de ataque. Um vetor de ataque local consiste na capacidade de manipular o sistema com acesso local, como por meio de um dispositivo conectado por USB. Interação do usuário trata da necessidade de uma ação local, como executar um anexo. Escopo indica se o exploit afeta apenas o contexto de segurança local. Disponibilidade trata da extensão em que um sistema fica indisponível.",
+  },
+
+  {
+    id: 106,
+    category: "Gestão de Vulnerabilidades",
+    question: "Um engenheiro de segurança revisa a superfície de ataque de uma empresa e descobre uma vulnerabilidade que torna toda a organização suscetível à exploração. No entanto, o exploit exige credenciais de administrador. Qual é uma possível razão para o engenheiro não precisar aplicar o patch imediatamente?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "As contas de funcionários têm acesso limitado para alterar configurações em seus dispositivos.", correct: true },
+      { letter: "B", text: "As contas de funcionários têm acesso total para alterar seus dispositivos.", correct: false },
+      { letter: "C", text: "Funcionários que não são da área de TI sabem que não devem usar as credenciais do administrador de TI.", correct: false },
+      { letter: "D", text: "Os computadores não têm valor.", correct: false },
+    ],
+    explanation: "Se uma vulnerabilidade exige credenciais administrativas e os usuários afetados têm permissões limitadas ou nenhuma permissão para fazer alterações, a vulnerabilidade não consegue infectar o dispositivo sem uma escalada de privilégios. Contas comuns não devem ter direitos administrativos completos. O fato de o computador ter baixo valor ou de os funcionários conhecerem uma regra não elimina a vulnerabilidade.",
+  },
+
+  {
+    id: 107,
+    category: "CVSS",
+    question: "O uso de dispositivos USB para fins maliciosos afetaria qual métrica do Common Vulnerability Scoring System (CVSS)?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Escopo", correct: false },
+      { letter: "B", text: "Disponibilidade", correct: false },
+      { letter: "C", text: "Interação do usuário", correct: false },
+      { letter: "D", text: "Vetores de ataque", correct: true },
+    ],
+    explanation: "O uso de USB representa um vetor de ataque local, pois exige acesso local para manipular o sistema. Interação do usuário trata de uma ação necessária do usuário, como executar um anexo. Disponibilidade trata da indisponibilidade do sistema e escopo trata da mudança do contexto de segurança afetado.",
+  },
+
+  {
+    id: 108,
+    category: "Resultados de Varredura",
+    question: "Um administrador revisa os alertas do software de varredura de vulnerabilidades. Um alerta indica que há software vulnerável em um endpoint, mas uma inspeção mais detalhada revela que o software não está instalado. Como esse resultado deve ser classificado?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Verdadeiro positivo", correct: false },
+      { letter: "B", text: "Falso positivo", correct: true },
+      { letter: "C", text: "Falso negativo", correct: false },
+      { letter: "D", text: "Verdadeiro negativo", correct: false },
+    ],
+    explanation: "Um falso positivo ocorre quando a varredura indica incorretamente que uma vulnerabilidade ou misconfiguration está presente quando ela não existe. Um falso negativo ocorre quando a ferramenta não identifica uma vulnerabilidade real. Um verdadeiro positivo identifica corretamente uma vulnerabilidade, enquanto um verdadeiro negativo indica corretamente que ela não existe.",
+  },
+
+  {
+    id: 109,
+    category: "Priorização de Vulnerabilidades",
+    question: "Uma equipe de cibersegurança identificou várias vulnerabilidades na rede, incluindo uma ameaça de dia zero ainda não explorada. Como a equipe deve priorizar quais vulnerabilidades tratar primeiro?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Priorizar vulnerabilidades fáceis de explorar, independentemente do impacto potencial.", correct: false },
+      { letter: "B", text: "Priorizar vulnerabilidades que afetam sistemas ou dados críticos.", correct: true },
+      { letter: "C", text: "Priorizar vulnerabilidades com base na facilidade de implementar suas correções.", correct: false },
+      { letter: "D", text: "Priorizar vulnerabilidades com base nas recomendações de consultores externos.", correct: false },
+    ],
+    explanation: "Quando há várias vulnerabilidades, a prioridade deve ser dada às que impactam sistemas essenciais ou dados sensíveis. Se exploradas, elas podem causar interrupções operacionais, violações de dados e outras consequências graves. Facilidade de correção, opinião externa e explorabilidade são fatores secundários diante do impacto sobre ativos críticos.",
+  },
+
+  {
+    id: 110,
+    category: "Priorização de Vulnerabilidades",
+    question: "Um administrador de rede recebeu um alerta sobre uma vulnerabilidade de dia zero em um sistema crítico. Quais fatores ele deve considerar para priorizar essa vulnerabilidade? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Nível de sofisticação dos atores de ameaça", correct: true },
+      { letter: "B", text: "Disponibilidade de patches", correct: false },
+      { letter: "C", text: "Privacidade da vulnerabilidade", correct: false },
+      { letter: "D", text: "Impacto da vulnerabilidade", correct: true },
+    ],
+    explanation: "Ao priorizar uma vulnerabilidade de dia zero, é essencial considerar seu impacto e o nível de sofisticação dos atores de ameaça. Um dia zero pode ser explorado antes que o fornecedor conheça o problema, e a sofisticação dos atacantes influencia a probabilidade de exploração bem-sucedida. A disponibilidade de patches não se aplica quando ainda não existe patch.",
+  },
+
+  {
+    id: 111,
+    category: "CVSS",
+    question: "Uma equipe forense concluiu que um funcionário abriu um anexo malicioso que instalou um trojan e levou um ransomware a assumir a rede. Qual métrica-base do CVSS esse cenário afeta?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Interação do usuário", correct: true },
+      { letter: "B", text: "Integridade", correct: false },
+      { letter: "C", text: "Vetor de ataque", correct: false },
+      { letter: "D", text: "Escopo", correct: false },
+    ],
+    explanation: "A métrica é interação do usuário, pois a exploração dependeu de uma ação local do funcionário: abrir o anexo. Vetor de ataque descreve se o ataque é físico, local, adjacente ou pela rede. Escopo trata da mudança do contexto de segurança afetado, e integridade trata da alteração da funcionalidade ou dos dados.",
+  },
+
+  {
+    id: 112,
+    category: "Valor de Ativos",
+    question: "Um contratado de defesa colocou todas as máquinas offline devido a uma vulnerabilidade não corrigível no subsistema de inicialização UEFI. Como os sistemas contêm dados extremamente sensíveis, o contratado não pode arriscar uma violação. O que descreve esse tipo de vulnerabilidade?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Verdadeiro negativo", correct: false },
+      { letter: "B", text: "Alto valor do ativo", correct: true },
+      { letter: "C", text: "Falso positivo", correct: false },
+      { letter: "D", text: "Baixo valor do ativo", correct: false },
+    ],
+    explanation: "O valor de um ativo influencia sua pontuação de vulnerabilidade. Ativos de alto valor, cujo comprometimento teria impactos amplos, têm pouca tolerância a vulnerabilidades e podem elevar as classificações para alto ou crítico. Falsos positivos e verdadeiros negativos descrevem resultados de varredura, não o valor do ativo.",
+  },
+
+  {
+    id: 113,
+    category: "Resultados de Varredura",
+    question: "Um engenheiro demonstra um novo antivírus instalando um vírus de teste padronizado. O antivírus antigo não o detecta, mas o novo detecta. O que está acontecendo com o antivírus antigo?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Falso negativo", correct: true },
+      { letter: "B", text: "Falso positivo", correct: false },
+      { letter: "C", text: "Verdadeiro positivo", correct: false },
+      { letter: "D", text: "Verdadeiro negativo", correct: false },
+    ],
+    explanation: "O antivírus não detectou o vírus, resultando em um falso negativo. Um falso negativo ocorre quando uma ferramenta indica incorretamente que uma vulnerabilidade ou ameaça não existe. Um falso positivo indica uma ameaça inexistente, um verdadeiro positivo identifica corretamente uma ameaça e um verdadeiro negativo indica corretamente sua ausência.",
+  },
+
+  {
+    id: 114,
+    category: "Explorabilidade",
+    question: "Uma empresa de produção de vídeo possui um parque de servidores com placas gráficas para gerar imagens computadorizadas. Os servidores não armazenam dados e não são caros, mas a empresa quer prevenir vulnerabilidades. Qual é uma razão convincente para agir de forma proativa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Baixo valor do ativo", correct: false },
+      { letter: "B", text: "Alto valor do ativo", correct: false },
+      { letter: "C", text: "Economizar consumo de energia", correct: false },
+      { letter: "D", text: "Explorabilidade", correct: true },
+    ],
+    explanation: "Explorabilidade avalia a probabilidade de um atacante transformar uma vulnerabilidade em uma ação maliciosa. Mesmo servidores de baixo valor podem ser explorados para usar recursos ociosos, por exemplo, em mineração ilícita de criptomoedas. O baixo valor do ativo não elimina o risco, e a economia de energia não é a principal justificativa de segurança.",
+  },
+
+  {
+    id: 115,
+    category: "Priorização de Vulnerabilidades",
+    question: "Uma empresa descobriu vulnerabilidades e precisa priorizá-las com base em explorabilidade e weaponization. Quais fatores são importantes nessa análise? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Nível de sofisticação dos atores de ameaça que visam a vulnerabilidade", correct: true },
+      { letter: "B", text: "Número de sistemas e pessoas afetados pela vulnerabilidade", correct: false },
+      { letter: "C", text: "Disponibilidade de patches para a vulnerabilidade", correct: true },
+      { letter: "D", text: "Dano potencial causado pela exploração bem-sucedida", correct: false },
+    ],
+    explanation: "A sofisticação dos atores influencia a probabilidade de exploração bem-sucedida. A disponibilidade de um patch também afeta a priorização relacionada à explorabilidade e à weaponization, pois uma correção disponível pode reduzir o risco dependendo da complexidade de aplicação. Escopo e dano potencial são importantes em geral, mas não são o foco direto desta análise.",
+  },
+
+  {
+    id: 116,
+    category: "Frameworks de Segurança",
+    question: "Qual organização sem fins lucrativos se concentra na segurança de aplicações web?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "ISO 27001", correct: false },
+      { letter: "B", text: "FIPS", correct: false },
+      { letter: "C", text: "OWASP", correct: true },
+      { letter: "D", text: "NIST", correct: false },
+    ],
+    explanation: "A OWASP é uma organização sem fins lucrativos focada na segurança de aplicações web. Ela fornece ferramentas e recursos gratuitos e abertos para ajudar desenvolvedores e organizações a criar aplicações mais seguras. FIPS, NIST e ISO 27001 são padrões ou frameworks mais amplos e não têm esse foco específico.",
+  },
+
+  {
+    id: 117,
+    category: "Vulnerabilidades de Dia Zero",
+    question: "Uma empresa foi obrigada a desabilitar o mecanismo de gerenciamento pré-boot em todos os computadores devido a uma falha sem patch disponível, tornando a vulnerabilidade explorável. Que tipo de vulnerabilidade é essa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Dia zero", correct: true },
+      { letter: "B", text: "Falso positivo", correct: false },
+      { letter: "C", text: "Falso negativo", correct: false },
+      { letter: "D", text: "Baixo valor", correct: false },
+    ],
+    explanation: "Uma vulnerabilidade de dia zero é explorável e ainda não possui um patch disponível. Ela pode permanecer sem detecção e criar um vetor de ataque difícil ou impossível de corrigir até que o fornecedor desenvolva uma solução.",
+  },
+
+  {
+    id: 118,
+    category: "Gestão de Risco",
+    question: "Ao associar o CVSS ao Risk Rating Framework, qual cenário é verdadeiro?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Se um ataque for provável e causar impacto medíocre, a classificação geral de risco será baixa.", correct: false },
+      { letter: "B", text: "Se um ataque for improvável, mas causar impacto crítico, a classificação geral será moderada.", correct: false },
+      { letter: "C", text: "Se um ataque for provável e causar impacto crítico, a classificação geral será alta ou crítica/severa.", correct: true },
+      { letter: "D", text: "Se um ataque for iminente, mas tiver impacto relativamente efetivo, a classificação será baixa.", correct: false },
+    ],
+    explanation: "Quando a probabilidade e o impacto são altos — ataque provável e impacto crítico — a classificação normalmente é alta ou crítica/severa. Uma baixa probabilidade pode reduzir o risco mesmo com impacto crítico, enquanto uma alta probabilidade não resulta em risco baixo quando o impacto é apenas moderado.",
+  },
+
+  {
+    id: 119,
+    category: "Awareness Training",
+    question: "Um funcionário recebeu um e-mail que imitava o proprietário da empresa, comprou cartões-presente sem verificar a legitimidade da mensagem e expôs a empresa a risco. Qual política deve ser implementada?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Controles compensatórios", correct: false },
+      { letter: "B", text: "Gerenciamento de configuração", correct: false },
+      { letter: "C", text: "Aplicação de patches", correct: false },
+      { letter: "D", text: "Treinamento de conscientização", correct: true },
+    ],
+    explanation: "O treinamento de conscientização ajuda a reduzir riscos de interação do usuário, como clicar em mensagens indevidas ou seguir instruções fraudulentas. É importante testar regularmente os funcionários para verificar retenção de conhecimento. Patches protegem contra vulnerabilidades de software, enquanto gerenciamento de configuração mantém sistemas consistentes e controles compensatórios substituem controles primários.",
+  },
+
+  {
+    id: 120,
+    category: "Gerenciamento de Configuração",
+    question: "Para manter um estado consistente, compatível e seguro entre os sistemas, de acordo com uma nova política, em qual controle um administrador de sistemas deve se concentrar principalmente?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Aplicação de patches", correct: false },
+      { letter: "B", text: "Gerenciamento de configuração", correct: true },
+      { letter: "C", text: "Controles compensatórios", correct: false },
+      { letter: "D", text: "Treinamento de conscientização", correct: false },
+    ],
+    explanation: "O gerenciamento de configuração garante que os sistemas permaneçam configurados de acordo com padrões de segurança e operação. Manter um estado conhecido e compatível reduz vulnerabilidades causadas por configurações incorretas ou desatualizadas. Patches, controles compensatórios e treinamento têm objetivos diferentes.",
+  },
+
+  {
+    id: 121,
+    category: "Patch Management",
+    question: "Um gerente de projeto supervisiona a implantação de um novo sistema de gerenciamento de dispositivos, com o benefício adicional de mantê-los atualizados. Que ação esse sistema permite à empresa realizar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Alterar requisitos de negócio", correct: false },
+      { letter: "B", text: "Controles compensatórios", correct: false },
+      { letter: "C", text: "Treinamento de conscientização", correct: false },
+      { letter: "D", text: "Aplicação de patches", correct: true },
+    ],
+    explanation: "Sistemas de gerenciamento de dispositivos ajudam a automatizar e simplificar a aplicação de patches. Patches são uma primeira linha de defesa contra a exploração de vulnerabilidades de software. Controles compensatórios podem ser necessários quando um dispositivo não consegue receber patches, mas não são a ação descrita no cenário.",
+  },
+
+  {
+    id: 122,
+    category: "Relatórios de Vulnerabilidade",
+    question: "Um engenheiro quer melhorar a segurança do sistema de e-mail. O sistema possui um mecanismo integrado de relatórios que mostra recomendações de melhoria e correções sugeridas com percentuais diferentes para indicar importância. A qual componente de relatórios de vulnerabilidade isso se refere?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Pontuação de risco", correct: true },
+      { letter: "B", text: "Vulnerabilidades", correct: false },
+      { letter: "C", text: "Priorização", correct: false },
+      { letter: "D", text: "Mitigação", correct: false },
+    ],
+    explanation: "Percentuais que indicam a importância de uma correção representam pontuações de risco. A pontuação mede o risco de um sistema, aplicação ou vulnerabilidade ser explorado. A priorização é uma etapa posterior que usa a pontuação e outros fatores para ordenar o tratamento; mitigação é a ação tomada para reduzir o risco.",
+  },
+
+  {
+    id: 123,
+    category: "Relatórios de Vulnerabilidade",
+    question: "Apesar de ter se recuperado de um ransomware um ano atrás, uma pequena empresa de investimentos sofre um novo ataque. O atacante obtém acesso usando um desktop que deveria ter sido removido por estar fora de suporte há mais de um ano. Que tipo de exposição a empresa enfrenta?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Mitigação", correct: false },
+      { letter: "B", text: "Vulnerabilidades", correct: true },
+      { letter: "C", text: "Priorização", correct: false },
+      { letter: "D", text: "Pontuação de risco", correct: false },
+    ],
+    explanation: "O cenário representa uma vulnerabilidade: um ativo antigo e fora de suporte permaneceu no ambiente e foi explorado. Inventários de ativos incompletos ou imprecisos podem fazer vulnerabilidades reaparecerem em relatórios futuros. A pontuação de risco e a priorização ajudam a organizar o tratamento, mas não são a exposição descrita.",
+  },
+
+  {
+    id: 124,
+    category: "Controles de Segurança",
+    question: "Uma empresa adotou novas diretrizes do NIST e quer ajustar suas políticas para manter proteção quando circunstâncias impedem o uso de medidas de segurança primárias. O que fornece esse tipo de proteção?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Treinamento de conscientização", correct: false },
+      { letter: "B", text: "Gerenciamento de configuração", correct: false },
+      { letter: "C", text: "Aplicação de patches", correct: false },
+      { letter: "D", text: "Controles compensatórios", correct: true },
+    ],
+    explanation: "Controles compensatórios fornecem proteção alternativa quando não é possível implementar ou usar um controle primário. Eles são úteis em sistemas complexos ou legados que não podem ser facilmente alterados, atualizados ou mantidos. Patches, configuração e treinamento resolvem outros tipos de necessidade.",
+  },
+
+  {
+    id: 125,
+    category: "Governança de Segurança",
+    question: "Uma empresa contratou um novo CISO porque equipes isoladas não estavam trabalhando juntas para proteger os sistemas. Qual é a responsabilidade mais importante do CISO nessa situação?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Aplicação de patches", correct: false },
+      { letter: "B", text: "Alterar requisitos de negócio", correct: true },
+      { letter: "C", text: "Treinamento de conscientização", correct: false },
+      { letter: "D", text: "Gerenciamento de configuração", correct: false },
+    ],
+    explanation: "As organizações crescem, mudam e se adaptam; os líderes devem avaliar como essa evolução afeta o programa de cibersegurança. O CISO deve alinhar as abordagens e capacidades de segurança às mudanças nos requisitos de negócio e promover coordenação entre equipes. Patches e configuração são controles operacionais específicos, não a responsabilidade central descrita.",
+  },
+
+  {
+    id: 126,
+    category: "Comunicação de Vulnerabilidades",
+    question: "Uma empresa contratou um terceiro para desenvolver uma aplicação proprietária de gerenciamento da produção. Quais são inibidores comuns para os relatórios e a comunicação de vulnerabilidades em organizações com sistemas proprietários? (Selecione as três melhores opções.)",
+    multipleChoice: true,
+    selectCount: 3,
+    options: [
+      { letter: "A", text: "Falta de recursos para testar e remediar vulnerabilidades no sistema proprietário", correct: true },
+      { letter: "B", text: "Medo de revelar informações proprietárias a partes externas", correct: true },
+      { letter: "C", text: "Incompatibilidade com ferramentas de gerenciamento de vulnerabilidades de terceiros", correct: false },
+      { letter: "D", text: "Falta de compreensão da arquitetura e das dependências subjacentes da aplicação", correct: true },
+    ],
+    explanation: "Sistemas proprietários podem ter documentação limitada e pouca compreensão da arquitetura e das dependências, dificultando a identificação e a remediação. As organizações também podem evitar divulgar informações por receio de expor segredos comerciais, além de não dispor de recursos suficientes para testar e corrigir o sistema. Incompatibilidade com ferramentas pode ocorrer, mas não é um inibidor específico e comum desse contexto.",
+  },
+
+  {
+    id: 127,
+    category: "CVSS",
+    question: "Um analista usa o CVSS para avaliar a gravidade de uma vulnerabilidade de software. Quais fatores devem ser considerados e por que o CVSS é uma ferramenta importante? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Tipo de vulnerabilidade, sistema afetado e impacto potencial; para priorizar os esforços de remediação", correct: true },
+      { letter: "B", text: "Gravidade, número de sistemas afetados e impacto potencial; para alocar recursos com mais eficácia", correct: false },
+      { letter: "C", text: "Custo de correção, número de sistemas afetados e impacto potencial; para fornecer um método padronizado de gravidade", correct: false },
+      { letter: "D", text: "Probabilidade de exploração, impacto potencial e disponibilidade de patch; para fornecer uma medida objetiva de risco", correct: true },
+    ],
+    explanation: "O CVSS atribui uma pontuação considerando o tipo de vulnerabilidade, o sistema afetado e o impacto potencial, ajudando as equipes a priorizar a remediação. Ele também considera probabilidade de exploração, impacto e disponibilidade de patch para medir objetivamente o risco. As demais opções apresentam listas incompletas ou justificativas imprecisas.",
+  },
+
+  {
+    id: 128,
+    category: "Métricas de Segurança",
+    question: "Um pequeno departamento de TI está reorganizando e priorizando projetos futuros. A direção exige métricas para determinar se um projeto vale a pena. O que o departamento pode usar para comparar suas operações?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Objetivos de nível de serviço", correct: true },
+      { letter: "B", text: "Pontuações de risco", correct: false },
+      { letter: "C", text: "Mitigação", correct: false },
+      { letter: "D", text: "Gerenciamento de configuração", correct: false },
+    ],
+    explanation: "Objetivos de nível de serviço (SLOs) fornecem uma referência para medir o desempenho das operações de segurança e verificar se as expectativas da liderança estão sendo atendidas. Pontuações de risco, mitigação e gerenciamento de configuração servem a finalidades distintas.",
+  },
+
+  {
+    id: 129,
+    category: "Controles Compensatórios",
+    question: "Restrições de um sistema legado impedem a modificação de uma aplicação financeira crítica. Entretanto, a aplicação não atende a um requisito de segurança específico da política da organização. O que deve ser implementado para atender ao requisito sem modificar a aplicação?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Detetivo", correct: false },
+      { letter: "B", text: "Corretivo", correct: false },
+      { letter: "C", text: "Preventivo", correct: false },
+      { letter: "D", text: "Compensatório", correct: true },
+    ],
+    explanation: "Um controle compensatório é uma medida de segurança alternativa que oferece nível de proteção semelhante quando o controle primário não pode ser implementado. Ele atende ao requisito sem modificar a aplicação legada. Controles preventivos, detetivos e corretivos têm funções diferentes e não substituem necessariamente o controle primário nesse cenário.",
+  },
+
+  {
+    id: 130,
+    category: "Comunicação de Vulnerabilidades",
+    question: "Uma instituição financeira está avaliando inibidores de comunicação e relatórios de vulnerabilidades. Por que um memorando de entendimento (MOU) entre a instituição e um fornecedor terceirizado pode ser um inibidor? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "O MOU pode conter restrições sobre o compartilhamento de informações de vulnerabilidades.", correct: true },
+      { letter: "B", text: "O MOU garante que a instituição possa transferir a responsabilidade de gestão de vulnerabilidades ao fornecedor.", correct: false },
+      { letter: "C", text: "O MOU pode não definir claramente os papéis e responsabilidades de cada parte na gestão de vulnerabilidades.", correct: true },
+      { letter: "D", text: "O MOU pode facilitar a colaboração e o compartilhamento de informações entre as partes.", correct: false },
+    ],
+    explanation: "Um MOU pode restringir o compartilhamento de informações sobre vulnerabilidades ou deixar pouco claros os papéis e responsabilidades de cada parte, causando confusão e atrasos. Embora um MOU bem elaborado possa facilitar colaboração e compartilhamento, isso não é um inibidor.",
+  },
+
+  {
+    id: 131,
+    category: "Relatórios de Vulnerabilidade",
+    question: "Um engenheiro quer melhorar a segurança do sistema de e-mail. O sistema possui um mecanismo integrado de relatórios que classifica a configuração atual. A qual componente de relatórios de vulnerabilidade essa funcionalidade se refere?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Pontuação de risco", correct: true },
+      { letter: "B", text: "Mitigação", correct: false },
+      { letter: "C", text: "Priorização", correct: false },
+      { letter: "D", text: "Vulnerabilidades", correct: false },
+    ],
+    explanation: "Pontuações de risco medem o risco de um sistema, aplicação ou vulnerabilidade ser comprometido. Relatórios podem analisar tendências e incorporar priorização para orientar a ordem de tratamento, mas a classificação da configuração atual é a avaliação de risco. Mitigações são as ações usadas para resolver os riscos.",
+  },
+
+  {
+    id: 132,
+    category: "Relatórios de Vulnerabilidade",
+    question: "Um departamento de TI revisa relatórios de vulnerabilidade no SIEM antes de uma auditoria e encontra vulnerabilidades críticas e etapas para resolvê-las. Nesse tipo de relatório, o que representa a descoberta das etapas para resolver os problemas?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Vulnerabilidades", correct: false },
+      { letter: "B", text: "Priorização", correct: false },
+      { letter: "C", text: "Mitigação", correct: true },
+      { letter: "D", text: "Pontuação de risco", correct: false },
+    ],
+    explanation: "Relatórios detalhados de vulnerabilidades incluem mitigações recomendadas, como identificar um patch ou descrever uma solução alternativa. Essas ações reduzem ou eliminam o risco. Pontuações combinam vulnerabilidades e fatores de risco; priorização define a ordem de tratamento; a descoberta da vulnerabilidade em si é diferente da recomendação de correção.",
+  },
 ];
