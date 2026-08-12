@@ -1,0 +1,3 @@
+- [x] Remover a dependência do roteador para carregar a página única no subdiretório do GitHub Pages.
+- [x] Gerar novamente os arquivos estáticos na raiz do repositório.
+- [x] Publicar a correção no GitHub e validar a URL pública.
