@@ -4,6 +4,6 @@
 - [x] Extrair e analisar as questões dos PDFs IndividualResponse6 e IndividualResponse7.
 - [x] Traduzir e incorporar as novas questões ao banco existente.
 - [x] Gerar, validar e publicar o build atualizado no GitHub.
-- [ ] Extrair e analisar as questões dos PDFs IndividualResponse8 e IndividualResponse9.
-- [ ] Traduzir, incorporar as questões e atualizar os módulos do filtro.
-- [ ] Validar, gerar o build, publicar e verificar a URL pública.
+- [x] Extrair e analisar as questões dos PDFs IndividualResponse8 e IndividualResponse9.
+- [x] Traduzir, incorporar as questões e atualizar os módulos do filtro.
+- [x] Validar, gerar o build, publicar e verificar a URL pública.
