@@ -1791,4 +1791,524 @@ export const questions: Question[] = [
     ],
     explanation: "Relatórios detalhados de vulnerabilidades incluem mitigações recomendadas, como identificar um patch ou descrever uma solução alternativa. Essas ações reduzem ou eliminam o risco. Pontuações combinam vulnerabilidades e fatores de risco; priorização define a ordem de tratamento; a descoberta da vulnerabilidade em si é diferente da recomendação de correção.",
   },
+  {
+    id: 133,
+    category: "Resposta a Incidentes",
+    question: "Uma instituição financeira detectou uma possível violação de dados e ativou sua equipe de resposta a incidentes. Como parte da investigação, a equipe analisa dados e logs. Qual é o objetivo principal desse tipo de análise?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Restaurar as operações comerciais ao normal o mais rapidamente possível.", correct: false },
+      { letter: "B", text: "Identificar a causa raiz do incidente.", correct: false },
+      { letter: "C", text: "Determinar o escopo do incidente e quais dados podem ter sido comprometidos.", correct: true },
+      { letter: "D", text: "Comunicar o incidente às autoridades policiais e regulatórias.", correct: false },
+    ],
+    explanation: "A análise de dados e logs ajuda principalmente a determinar o escopo do incidente e os dados potencialmente comprometidos. Essas informações orientam um plano para reduzir o impacto. A causa raiz, a recuperação e as comunicações externas também são importantes, mas não são o objetivo primário dessa análise.",
+  },
+
+  {
+    id: 134,
+    category: "Controles Compensatórios",
+    question: "Após detectar uma violação, um administrador não consegue seguir o processo de resposta a incidentes do manual devido à complexidade da situação. Qual é a ação mais adequada ao aplicar controles compensatórios?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Implementar um controle que exija análise de causa raiz para impedir a recorrência.", correct: false },
+      { letter: "B", text: "Implementar um controle que melhore a segurança por um método diferente, mas alcance o mesmo objetivo.", correct: true },
+      { letter: "C", text: "Implementar um controle que priorize a segurança das pessoas em vez da violação.", correct: false },
+      { letter: "D", text: "Implementar um controle que remova malware, backdoors e contas comprometidas dos hosts.", correct: false },
+    ],
+    explanation: "Um controle compensatório usa um método alternativo para atingir o mesmo propósito de segurança quando o controle primário não pode ser aplicado. Análise de causa raiz, remoção de malware e proteção das pessoas são atividades válidas, mas não definem um controle compensatório nesse cenário.",
+  },
+
+  {
+    id: 135,
+    category: "Forense Digital",
+    question: "Em um caso criminal, uma empresa coloca discos rígidos em uma embalagem antiestática para proteger os dados durante o transporte às autoridades. Qual é a finalidade da embalagem antiestática?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Cadeia de custódia", correct: false },
+      { letter: "B", text: "Preservação de dados", correct: true },
+      { letter: "C", text: "Validação de dados", correct: false },
+      { letter: "D", text: "Análise de dados", correct: false },
+    ],
+    explanation: "A preservação de dados inclui o uso de proteção antiestática para reduzir a possibilidade de dano ou corrupção causada por descarga eletrostática. A cadeia de custódia registra o manuseio da evidência; validação verifica integridade; análise examina o conteúdo.",
+  },
+
+  {
+    id: 136,
+    category: "Resposta a Incidentes",
+    question: "Um contratado de resposta a incidentes investigou uma violação e informou que somente dados básicos, como nomes de usuário e e-mails, foram vazados. O que essa investigação ajuda o cliente a fazer?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Declarar o incidente.", correct: false },
+      { letter: "B", text: "Definir uma linha do tempo.", correct: false },
+      { letter: "C", text: "Responder às recomendações.", correct: false },
+      { letter: "D", text: "Determinar o escopo.", correct: true },
+    ],
+    explanation: "Análises de risco e avaliações de impacto ajudam a medir o escopo de um incidente. Saber que apenas informações básicas foram vazadas delimita o que foi afetado. Declaração, linha do tempo e recomendações são etapas relacionadas, mas posteriores ou diferentes.",
+  },
+
+  {
+    id: 137,
+    category: "Preparação de Incidentes",
+    question: "Uma startup de tecnologia cresce rapidamente e enfrenta ameaças devido à expansão de sua base de usuários. Qual ação deve ser priorizada para lidar com possíveis incidentes de segurança?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Concentrar-se somente na análise pós-incidente.", correct: false },
+      { letter: "B", text: "Fortalecer os sistemas e estabelecer canais de comunicação confidenciais.", correct: true },
+      { letter: "C", text: "Documentar possíveis violações sem contenção.", correct: false },
+      { letter: "D", text: "Iniciar diretamente a detecção sem preparação prévia.", correct: false },
+    ],
+    explanation: "Fortalecer os sistemas e estabelecer canais confidenciais cria uma base de preparação e torna a startup mais resiliente. Concentrar-se apenas no pós-incidente, documentar sem conter ou ignorar a preparação deixa a organização menos apta a prevenir e responder a ataques.",
+  },
+
+  {
+    id: 138,
+    category: "Indicadores de Comprometimento",
+    question: "Um administrador identifica no SIEM um alerta de comportamento anômalo em um log relevante. Qual deve ser o próximo passo relacionado a Indicadores de Comprometimento (IoCs)?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Investigar o alerta para determinar a causa do comportamento anômalo.", correct: true },
+      { letter: "B", text: "Consultar imediatamente um provedor externo de threat intelligence.", correct: false },
+      { letter: "C", text: "Ignorar o alerta, pois provavelmente é um falso positivo.", correct: false },
+      { letter: "D", text: "Desligar imediatamente o sistema associado ao comportamento anômalo.", correct: false },
+    ],
+    explanation: "O próximo passo é investigar o alerta para determinar sua causa e confirmar se há um incidente. Ignorar o alerta é arriscado, desligar o sistema pode ser uma medida desproporcional e consultar um provedor externo pode ser útil depois, mas não é a ação imediata.",
+  },
+
+  {
+    id: 139,
+    category: "Forense Digital",
+    question: "Após uma auditoria forense sobre atividade maliciosa de um ex-funcionário, uma empresa quer se proteger contra possíveis responsabilidades legais. Qual processo deve seguir para proteger as evidências?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Legal hold.", correct: false },
+      { letter: "B", text: "Validação de dados.", correct: false },
+      { letter: "C", text: "Análise de dados.", correct: false },
+      { letter: "D", text: "Cadeia de custódia.", correct: true },
+    ],
+    explanation: "A cadeia de custódia registra o manuseio da evidência desde a coleta até sua apresentação em juízo. Legal hold determina a preservação de informações armazenadas eletronicamente; validação verifica integridade; análise examina os dados.",
+  },
+
+  {
+    id: 140,
+    category: "Resposta a Incidentes",
+    question: "Uma empresa de software de gerenciamento de senhas sofreu uma violação e publicou uma declaração descrevendo cronologicamente como e quando o ataque ocorreu. Que processo foi concluído antes da declaração?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Declaração do incidente.", correct: false },
+      { letter: "B", text: "Resposta às recomendações.", correct: false },
+      { letter: "C", text: "Determinação do escopo.", correct: false },
+      { letter: "D", text: "Definição de uma linha do tempo.", correct: true },
+    ],
+    explanation: "A organização deve desenvolver uma linha do tempo para relatar e responder a incidentes, incluindo a causa, a recuperação e as medidas preventivas. A declaração ocorre antes; recomendações e remediação tendem a ocorrer mais tarde; o escopo é uma etapa de identificação e avaliação.",
+  },
+
+  {
+    id: 141,
+    category: "Preservação de Evidências",
+    question: "Um funcionário está deixando a empresa. Por causa de sua função, a organização precisa manter seus e-mails por sete anos para cumprir requisitos regulatórios. O que deve ser habilitado no e-mail?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Legal hold.", correct: true },
+      { letter: "B", text: "Validação de dados.", correct: false },
+      { letter: "C", text: "Análise de dados.", correct: false },
+      { letter: "D", text: "Preservação de dados.", correct: false },
+    ],
+    explanation: "Legal hold, ou litigation hold, é uma notificação que instrui a organização a preservar informações eletronicamente armazenadas. Ela impede a eliminação normal dos e-mails enquanto houver obrigação legal ou regulatória.",
+  },
+
+  {
+    id: 142,
+    category: "Preservação de Evidências",
+    question: "Uma empresa suspeita que um ex-funcionário danificou informações corporativas e contrata uma empresa forense. Qual deve ser a primeira prioridade do fornecedor para garantir a integridade das informações?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Preservação de dados.", correct: false },
+      { letter: "B", text: "Análise de dados.", correct: false },
+      { letter: "C", text: "Validação de dados.", correct: false },
+      { letter: "D", text: "Legal hold.", correct: true },
+    ],
+    explanation: "A primeira prioridade é estabelecer um legal hold, que suspende a eliminação ou o processamento normal dos registros relevantes ao caso. Depois, os dados podem ser preservados, validados e analisados de forma adequada.",
+  },
+
+  {
+    id: 143,
+    category: "Indicadores de Comprometimento",
+    question: "Uma equipe identificou IoCs nos logs, incluindo tráfego de rede incomum e um arquivo suspeito. Que ações ela pode tomar? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Notificar todos os funcionários e orientá-los a ter cuidado com e-mails e sites.", correct: false },
+      { letter: "B", text: "Colocar o arquivo suspeito em quarentena e analisá-lo para identificar malware ou outras ameaças.", correct: true },
+      { letter: "C", text: "Atualizar o antivírus de todos os sistemas para detectar e impedir novas infecções.", correct: false },
+      { letter: "D", text: "Analisar o tráfego de rede para identificar origem, destino e sistemas ou usuários relacionados.", correct: true },
+    ],
+    explanation: "Colocar o arquivo em quarentena e analisá-lo ajuda a isolar e remover a ameaça. A análise de tráfego identifica origem, destino e ativos envolvidos, ajudando a estimar o alcance do incidente. Atualizar antivírus e notificar funcionários podem ser medidas úteis, mas não respondem diretamente aos IoCs apresentados.",
+  },
+
+  {
+    id: 144,
+    category: "Cadeia de Custódia",
+    question: "Durante uma investigação, como os dispositivos e mídias coletados no local do crime devem ser identificados, embalados e selados?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Identificar os itens, colocá-los em embalagens antiestáticas e invioláveis e registrar os detalhes da coleta em um formulário de cadeia de custódia.", correct: true },
+      { letter: "B", text: "Usar marcador permanente, colocar em saco plástico e selar com fita adesiva.", correct: false },
+      { letter: "C", text: "Colocar em caixa de papelão, selar com fita crepe e guardar em armário trancado.", correct: false },
+      { letter: "D", text: "Usar caneta esferográfica, colocar em envelope pardo e selar com grampos.", correct: false },
+    ],
+    explanation: "Embalagens antiestáticas e invioláveis reduzem danos e adulterações. O formulário de cadeia de custódia registra onde, quando e por quem a evidência foi coletada, manuseada e armazenada. As demais opções não protegem adequadamente mídias eletrônicas nem documentam o manuseio.",
+  },
+
+  {
+    id: 145,
+    category: "Patch Management",
+    question: "Uma equipe identificou uma vulnerabilidade crítica em um servidor e incluiu a aplicação de patches no plano de ação. Por que o patching é importante?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Pode impedir que atacantes explorem a vulnerabilidade e causem danos à empresa.", correct: true },
+      { letter: "B", text: "Permite priorizar outras tarefas que não exigem patching.", correct: false },
+      { letter: "C", text: "Permite transferir a responsabilidade do patching para o fornecedor.", correct: false },
+      { letter: "D", text: "Garante que o escopo das atividades de resposta a incidentes seja limitado.", correct: false },
+    ],
+    explanation: "Patches podem impedir a exploração de vulnerabilidades e reduzir danos, especialmente quando a falha crítica é explorada ativamente. A responsabilidade normalmente permanece com a empresa, e o patch é apenas uma das medidas possíveis de contenção e erradicação.",
+  },
+
+  {
+    id: 146,
+    category: "SIEM",
+    question: "Um engenheiro quer gerenciar todos os logs de segurança coletados por diferentes ferramentas e serviços e implementa um SIEM. Qual recurso ele pretende utilizar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Preservação de dados.", correct: false },
+      { letter: "B", text: "Legal hold.", correct: false },
+      { letter: "C", text: "Análise de dados.", correct: true },
+      { letter: "D", text: "Validação de dados.", correct: false },
+    ],
+    explanation: "Uma função do SIEM é realizar análise de dados e logs para detectar e investigar incidentes. Preservação, legal hold e validação são atividades importantes em evidências digitais, mas não descrevem o recurso central indicado no cenário.",
+  },
+
+  {
+    id: 147,
+    category: "Resposta a Incidentes",
+    question: "Um funcionário acredita que alguém invadiu seu computador e vazou informações financeiras sensíveis. O que a equipe de segurança deve fazer para verificar a veracidade da alegação?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Coletar evidências.", correct: true },
+      { letter: "B", text: "Determinar o escopo.", correct: false },
+      { letter: "C", text: "Responder às recomendações.", correct: false },
+      { letter: "D", text: "Definir uma linha do tempo.", correct: false },
+    ],
+    explanation: "A equipe deve seguir um playbook de resposta a incidentes e coletar evidências para verificar a alegação e determinar a causa. Escopo, linha do tempo e recomendações são etapas posteriores ou complementares da investigação.",
+  },
+
+  {
+    id: 148,
+    category: "Preparação de Incidentes",
+    question: "Uma empresa varejista quer testar seu plano de resposta e decide realizar um exercício tabletop durante a fase de preparação. O que é um exercício tabletop?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Um teste físico do plano de recuperação de desastres.", correct: false },
+      { letter: "B", text: "Uma revisão das políticas de segurança da empresa.", correct: false },
+      { letter: "C", text: "Um exercício baseado em discussão que simula um incidente cibernético.", correct: true },
+      { letter: "D", text: "Um ataque simulado contra a rede da empresa.", correct: false },
+    ],
+    explanation: "Tabletop exercises são atividades baseadas em discussão nas quais pessoas-chave revisam o plano e conversam sobre como responderiam a cenários. Não são ataques simulados, testes físicos de recuperação nem simples revisão de políticas.",
+  },
+
+  {
+    id: 149,
+    category: "Relatórios de Incidentes",
+    question: "Uma empresa sofreu uma violação e precisa documentar os 5 Ws — quem, o quê, quando, onde e por quê. Qual é a importância de registrar os 5 Ws no relatório de resposta?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Ajuda a identificar o impacto financeiro do incidente.", correct: false },
+      { letter: "B", text: "Ajuda a determinar o nível de conformidade regulatória necessário.", correct: false },
+      { letter: "C", text: "Ajuda a avaliar a eficácia dos controles de segurança.", correct: false },
+      { letter: "D", text: "Fornece uma compreensão clara e completa do incidente.", correct: true },
+    ],
+    explanation: "Registrar os 5 Ws fornece uma visão clara e abrangente do incidente e ajuda a identificar sua causa. Impacto financeiro, conformidade e eficácia dos controles exigem métricas e análises adicionais; não são o objetivo principal dos 5 Ws.",
+  },
+
+  {
+    id: 150,
+    category: "Resposta a Incidentes",
+    question: "Uma pequena loja sofreu uma violação de cartões de crédito e contratou um terceiro para determinar o escopo. O contratado retornou uma lista de mudanças a serem feitas. O que ele forneceu?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Escopo.", correct: false },
+      { letter: "B", text: "Declaração do incidente.", correct: false },
+      { letter: "C", text: "Linha do tempo.", correct: false },
+      { letter: "D", text: "Recomendações.", correct: true },
+    ],
+    explanation: "Uma lista de mudanças para corrigir ou reduzir riscos representa recomendações de remediação. A declaração, a linha do tempo e o escopo são etapas diferentes e normalmente ocorrem antes das recomendações.",
+  },
+
+  {
+    id: 151,
+    category: "Playbooks de Incidentes",
+    question: "Uma empresa varejista está criando playbooks para orientar os procedimentos de resposta a incidentes. Qual é o principal benefício dessa ferramenta?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Eliminar a necessidade de treinamento contínuo.", correct: false },
+      { letter: "B", text: "Garantir conformidade legal em todas as jurisdições.", correct: false },
+      { letter: "C", text: "Automatizar todos os processos de segurança.", correct: false },
+      { letter: "D", text: "Fornecer uma estrutura para procedimentos eficientes de resposta a incidentes.", correct: true },
+    ],
+    explanation: "Playbooks estabelecem uma estrutura sistemática para orientar a equipe desde a detecção até contenção, erradicação e recuperação. Eles complementam treinamentos e podem apoiar automação, mas não eliminam treinamento, garantem toda conformidade ou automatizam todos os processos.",
+  },
+
+  {
+    id: 152,
+    category: "Forense Digital",
+    question: "Durante uma investigação, uma equipe realiza detecção e análise, aquisição de evidências e validação da integridade dos dados. Qual é o propósito de validar a integridade?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Garantir que não houve adulteração das evidências coletadas.", correct: true },
+      { letter: "B", text: "Proteger o local para impedir contaminação da evidência.", correct: false },
+      { letter: "C", text: "Criar uma cópia da evidência para análise.", correct: false },
+      { letter: "D", text: "Determinar o escopo das evidências coletadas.", correct: false },
+    ],
+    explanation: "Validar a integridade garante que ninguém adulterou a evidência. A prática normalmente envolve gerar hashes e compará-los ao longo do tempo. Proteger o local, copiar evidências e determinar escopo pertencem a outras fases do processo forense.",
+  },
+
+  {
+    id: 153,
+    category: "Aquisição de Evidências",
+    question: "Um administrador de uma organização de saúde investiga possível exfiltração de dados de pacientes e inicia atividades de resposta, incluindo aquisição de evidências e legal hold. Qual é o objetivo da aquisição de evidências?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Preservar os achados para uso em procedimentos legais.", correct: true },
+      { letter: "B", text: "Recuperar dados perdidos no incidente.", correct: false },
+      { letter: "C", text: "Identificar a origem do ataque.", correct: false },
+      { letter: "D", text: "Notificar a equipe jurídica sobre o incidente.", correct: false },
+    ],
+    explanation: "A aquisição de evidências preserva elementos que podem ser usados em processos legais. Isso inclui manter a cadeia de custódia, utilizar embalagens invioláveis e garantir armazenamento e transporte adequados. Recuperação, identificação da origem e notificação jurídica têm objetivos diferentes.",
+  },
+
+  {
+    id: 154,
+    category: "Métricas de SOC",
+    question: "Uma equipe de resposta percebeu um grande aumento no volume de alertas, com risco de fadiga de alertas. Por que monitorar e gerenciar esse volume é importante? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Pode melhorar a precisão da detecção e reduzir falsos positivos.", correct: true },
+      { letter: "B", text: "É desnecessário, pois as ferramentas lidam sozinhas com grandes volumes.", correct: false },
+      { letter: "C", text: "O volume de alertas não afeta o desempenho da equipe.", correct: false },
+      { letter: "D", text: "A fadiga de alertas reduz a eficácia da equipe para detectar e responder a ameaças reais.", correct: true },
+    ],
+    explanation: "Alto volume pode causar fadiga de alertas: analistas ficam dessensibilizados e podem ignorar ameaças reais. Filtrar alertas não críticos melhora a precisão e permite concentrar esforços em eventos relevantes, mantendo a efetividade da resposta.",
+  },
+
+  {
+    id: 155,
+    category: "Métricas de SOC",
+    question: "Uma empresa sofreu uma violação e a direção solicitou um relatório sobre o desempenho da equipe de resposta. Por que medir o tempo médio de remediação é importante para o relatório e a comunicação?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Ajuda a determinar o impacto financeiro e alocar recursos.", correct: false },
+      { letter: "B", text: "Permite acompanhar o tempo para detectar e responder a incidentes, melhorando os tempos de resposta.", correct: true },
+      { letter: "C", text: "Permite medir a eficácia dos controles e identificar melhorias.", correct: false },
+      { letter: "D", text: "Ajuda a determinar a gravidade dos incidentes e priorizar respostas pelo impacto.", correct: false },
+    ],
+    explanation: "O tempo médio de remediação mostra quanto tempo a equipe leva para detectar e responder aos incidentes, ajudando a melhorar processos e reduzir atrasos. Ele pode fornecer indícios sobre outras áreas, mas não tem como objetivo primário calcular impacto financeiro, gravidade ou eficácia dos controles.",
+  },
+
+  {
+    id: 156,
+    category: "Comunicação de Incidentes",
+    question: "Um funcionário transportava um backup de dados criptografado para um local externo quando um ladrão arrombou seu carro e roubou os dados. A quem o funcionário deve reportar o incidente primeiro?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Área jurídica.", correct: false },
+      { letter: "B", text: "Autoridades policiais.", correct: true },
+      { letter: "C", text: "Clientes.", correct: false },
+      { letter: "D", text: "Órgãos reguladores.", correct: false },
+    ],
+    explanation: "Em um furto físico, a primeira ação deve ser comunicar as autoridades policiais, o que pode ajudar a recuperar os itens e formalizar o incidente. Depois, a área jurídica orientará notificações a clientes e reguladores conforme as obrigações aplicáveis.",
+  },
+
+  {
+    id: 157,
+    category: "Análise de Causa Raiz",
+    question: "Um servidor de uma pequena empresa de construção ficou inacessível por vários dias. Após resolver o acesso, o proprietário pediu uma investigação sobre como isso foi possível e qual foi a causa subjacente. Que tipo de relatório ele está solicitando?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Relatório para autoridades policiais.", correct: false },
+      { letter: "B", text: "Análise de causa raiz.", correct: true },
+      { letter: "C", text: "Lições aprendidas.", correct: false },
+      { letter: "D", text: "Relatório regulatório.", correct: false },
+    ],
+    explanation: "A análise de causa raiz é uma técnica investigativa que identifica a causa fundamental de um problema e suas consequências. Lições aprendidas concentram-se nas mudanças recomendadas após o evento; relatórios policiais e regulatórios atendem a outras finalidades.",
+  },
+
+  {
+    id: 158,
+    category: "Lições Aprendidas",
+    question: "Após resolver um incidente, a direção quer um relatório descrevendo o que aconteceu e quais mudanças ajudariam a reduzir incidentes futuros. Que relatório atende a essa necessidade?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Lições aprendidas.", correct: true },
+      { letter: "B", text: "Relatório para autoridades policiais.", correct: false },
+      { letter: "C", text: "Relatório regulatório.", correct: false },
+      { letter: "D", text: "Análise forense.", correct: false },
+    ],
+    explanation: "Relatórios de lições aprendidas ou after-action identificam mudanças recomendadas, falhas de coordenação e oportunidades de melhoria na resposta. Relatórios policiais, regulatórios e análises forenses têm objetivos específicos diferentes.",
+  },
+
+  {
+    id: 159,
+    category: "Forense Digital",
+    question: "Uma empresa investigou uma interrupção de servidor e descobriu que um funcionário o desabilitou intencionalmente. A empresa quer investigar se a interrupção causou perdas. Que tipo de análise pode realizar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Análise forense.", correct: true },
+      { letter: "B", text: "Análise de causa raiz.", correct: false },
+      { letter: "C", text: "Análise regulatória.", correct: false },
+      { letter: "D", text: "Lições aprendidas.", correct: false },
+    ],
+    explanation: "Uma análise forense, conduzida por investigadores qualificados, examina evidências e possíveis implicações legais para determinar o que ocorreu e quais perdas resultaram. Análise de causa raiz busca a causa fundamental; lições aprendidas focam melhorias posteriores.",
+  },
+
+  {
+    id: 160,
+    category: "Comunicação de Incidentes",
+    question: "Uma instituição médica responde a uma violação recente de dados de pacientes. Um backup criptografado foi transportado e alguém arrombou o carro, embora não tenha roubado os dados. Para evitar consequências de conformidade, com quem a empresa deve entrar em contato?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Órgãos reguladores.", correct: true },
+      { letter: "B", text: "Autoridades policiais.", correct: false },
+      { letter: "C", text: "Clientes.", correct: false },
+      { letter: "D", text: "Departamento de relações públicas.", correct: false },
+    ],
+    explanation: "Os requisitos para diferentes tipos de incidentes estão nas normas regulatórias e podem envolver os órgãos competentes. No caso de dados de pacientes, a HIPAA é um exemplo de regime aplicável. Polícia, clientes e relações públicas podem ser envolvidos conforme o caso, mas não substituem a obrigação regulatória.",
+  },
+
+  {
+    id: 161,
+    category: "Comunicação de Incidentes",
+    question: "Um executivo de um grande banco multinacional teve o laptop de trabalho roubado durante uma viagem. Devido à sensibilidade das atividades, com quem ele deve trabalhar para tentar recuperar o equipamento?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Autoridades policiais.", correct: true },
+      { letter: "B", text: "Órgãos reguladores.", correct: false },
+      { letter: "C", text: "Clientes.", correct: false },
+      { letter: "D", text: "Área jurídica.", correct: false },
+    ],
+    explanation: "As autoridades policiais podem ajudar a recuperar o laptop ou prender os responsáveis. A área jurídica orienta notificações e responsabilidades, enquanto reguladores e clientes podem ser envolvidos caso haja perda ou exposição de dados.",
+  },
+
+  {
+    id: 162,
+    category: "Comunicação de Incidentes",
+    question: "Após identificar que dados protegidos pela HIPAA foram enviados aos pacientes errados, uma instituição médica decide trabalhar com reguladores para reduzir riscos futuros. Com quem deve trabalhar ao preparar-se para falar com os reguladores?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Autoridades policiais.", correct: false },
+      { letter: "B", text: "Clientes.", correct: false },
+      { letter: "C", text: "Órgãos reguladores.", correct: false },
+      { letter: "D", text: "Área jurídica.", correct: true },
+    ],
+    explanation: "A instituição deve consultar primeiro sua área jurídica ou assessoria legal, que orientará responsabilidades, possíveis passivos e os passos adequados. A colaboração com reguladores continua importante, mas a área jurídica prepara a organização para essa comunicação.",
+  },
+
+  {
+    id: 163,
+    category: "Comunicação de Incidentes",
+    question: "Uma empresa quer administrar as consequências da prisão de um executivo por desfalque. Embora o dinheiro dos clientes esteja seguro, a empresa quer evitar uma corrida aos saques. Com quem deve trabalhar para divulgar detalhes ao público?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Autoridades policiais.", correct: false },
+      { letter: "B", text: "Imprensa.", correct: true },
+      { letter: "C", text: "Órgãos reguladores.", correct: false },
+      { letter: "D", text: "Área jurídica.", correct: false },
+    ],
+    explanation: "A imprensa influencia a reputação durante a resposta a incidentes. Uma comunicação pública adequada pode reduzir rumores e limitar danos reputacionais. Polícia, reguladores e jurídico têm papéis importantes, mas não são o canal principal para divulgar informações ao público.",
+  },
+
+  {
+    id: 164,
+    category: "Relatórios de Incidentes",
+    question: "Uma equipe precisa apresentar à direção uma linha do tempo detalhada de uma violação. Por que é importante incluir esse elemento no relatório?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Uma linha do tempo não é útil em relatórios de resposta.", correct: false },
+      { letter: "B", text: "Uma linha do tempo determina a responsabilidade legal da empresa.", correct: false },
+      { letter: "C", text: "Uma linha do tempo ajuda a identificar lacunas e ineficiências no processo de resposta.", correct: true },
+      { letter: "D", text: "Uma linha do tempo fornece um registro detalhado de toda a atividade da rede.", correct: false },
+    ],
+    explanation: "Ao documentar a sequência dos eventos, a linha do tempo ajuda a entender o que ocorreu e identificar lacunas ou ineficiências que devem ser corrigidas. Ela pode auxiliar investigações legais e registrar eventos relevantes, mas esses não são seus objetivos primários.",
+  },
+
+  {
+    id: 165,
+    category: "Relatórios Regulatórios",
+    question: "Uma companhia aérea sofreu um ataque que comprometeu dados sensíveis de clientes e precisa cumprir prazos de comunicação a autoridades de aviação e proteção de dados. Qual é a importância do relatório regulatório?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Ajudar a avaliar a eficácia dos controles e processos de resposta.", correct: false },
+      { letter: "B", text: "Identificar a causa raiz e prevenir ataques futuros.", correct: false },
+      { letter: "C", text: "O descumprimento pode resultar em multas elevadas e penalidades legais.", correct: true },
+      { letter: "D", text: "Evitar atenção negativa da imprensa.", correct: false },
+    ],
+    explanation: "O relatório regulatório atende às obrigações perante órgãos governamentais. O descumprimento pode causar multas, danos reputacionais e consequências legais. Avaliar controles, identificar causa raiz e evitar mídia negativa podem ocorrer como efeitos indiretos, mas não são o objetivo principal.",
+  },
+
+  {
+    id: 166,
+    category: "Análise de Causa Raiz",
+    question: "Uma pequena empresa ficou sem internet por várias horas. Depois de resolver o problema, o proprietário pediu uma investigação sobre como isso aconteceu e qual foi a causa subjacente. Que tipo de relatório deve solicitar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Relatório para autoridades policiais.", correct: false },
+      { letter: "B", text: "Relatório regulatório.", correct: false },
+      { letter: "C", text: "Análise de causa raiz.", correct: true },
+      { letter: "D", text: "Lições aprendidas.", correct: false },
+    ],
+    explanation: "A análise de causa raiz identifica sistematicamente a causa fundamental de um problema e suas consequências. Lições aprendidas podem recomendar mudanças após a análise, mas não são o relatório solicitado para descobrir a causa subjacente.",
+  },
+
+  {
+    id: 167,
+    category: "Análise de Causa Raiz",
+    question: "Uma empresa varejista quer realizar uma análise de causa raiz após uma violação. Por que a análise é importante para relatórios e comunicação de resposta a incidentes? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Fornece informações sobre a eficácia dos controles e identifica áreas de melhoria.", correct: true },
+      { letter: "B", text: "Determina o impacto financeiro e aloca recursos.", correct: false },
+      { letter: "C", text: "Classifica o incidente e mede a precisão dos processos de resposta.", correct: false },
+      { letter: "D", text: "Ajuda a identificar a causa subjacente e a prevenir incidentes semelhantes.", correct: true },
+    ],
+    explanation: "A análise de causa raiz identifica a causa subjacente e permite implementar controles que evitem recorrência. Ela também mostra se os controles existentes foram suficientes ou precisam de melhorias. Impacto financeiro e classificação exigem avaliações adicionais.",
+  },
+
+  {
+    id: 168,
+    category: "Relatórios Executivos",
+    question: "Um líder de segurança está escrevendo o resumo executivo de um relatório de incidente cibernético. Que informação essencial deve incluir para oferecer uma visão clara e concisa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Resumo detalhado das políticas, procedimentos e normas aplicáveis.", correct: false },
+      { letter: "B", text: "Análise detalhada da metodologia dos atacantes, com estatísticas e gráficos.", correct: false },
+      { letter: "C", text: "Breve descrição do incidente, incluindo data, hora e escopo do ataque.", correct: true },
+      { letter: "D", text: "Opinião pessoal sobre a eficácia do plano e possíveis vieses.", correct: false },
+    ],
+    explanation: "Um resumo executivo deve apresentar brevemente o incidente, sua data, hora e escopo, com linguagem clara e adequada ao público. Detalhes técnicos extensos, políticas completas e opiniões pessoais não atendem ao objetivo de uma visão concisa e profissional.",
+  },
+
+  {
+    id: 169,
+    category: "Lições Aprendidas",
+    question: "Depois de resolver uma interrupção no serviço de processamento de cartões, a direção quer um relatório descrevendo o que aconteceu e quais mudanças podem reduzir incidentes futuros. Que relatório deve preparar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Relatório regulatório.", correct: false },
+      { letter: "B", text: "Análise forense.", correct: false },
+      { letter: "C", text: "Relatório para autoridades policiais.", correct: false },
+      { letter: "D", text: "Lições aprendidas.", correct: true },
+    ],
+    explanation: "Um relatório de lições aprendidas ou after-action descreve o que ocorreu e recomenda mudanças para melhorar a resposta futura. Relatórios regulatórios, policiais e análises forenses cumprem finalidades específicas diferentes.",
+  },
 ];

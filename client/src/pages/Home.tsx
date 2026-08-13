@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 const MODULE_RANGES: { label: string; start: number; end: number }[] = [
-  { label: "Todos", start: 1, end: 132 },
+  { label: "Todos", start: 1, end: 169 },
   { label: "Mód 1: Controles & Risco", start: 1, end: 21 },
   { label: "Mód 2: Threat Intel & Hunting", start: 22, end: 48 },
   { label: "Mód 3: Infra & Arquitetura", start: 49, end: 69 },
@@ -31,7 +31,9 @@ const MODULE_RANGES: { label: string; start: number; end: number }[] = [
   { label: "Mód 5: Vulnerability Mgmt", start: 82, end: 103 },
   { label: "Mód 6: CVSS & Priorização", start: 104, end: 118 },
   { label: "Mód 7: Relatórios & Gestão", start: 119, end: 132 },
-];
+  { label: "Mód 8: Resposta a Incidentes", start: 133, end: 153 },
+  { label: "Mód 9: Métricas & Comunicação", start: 154, end: 169 },
+]; 
 
 function getFilteredQuestions(moduleFilter: string): Question[] {
   const mod = MODULE_RANGES.find((m) => m.label === moduleFilter);
