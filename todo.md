@@ -7,6 +7,6 @@
 - [x] Extrair e analisar as questões dos PDFs IndividualResponse8 e IndividualResponse9.
 - [x] Traduzir, incorporar as questões e atualizar os módulos do filtro.
 - [x] Validar, gerar o build, publicar e verificar a URL pública.
-- [ ] Extrair e analisar as questões dos PDFs IndividualResponse10, 11, 12, LearningPlatform13 e LearningPlatform14.
-- [ ] Traduzir, incorporar as questões e criar os novos módulos no filtro.
-- [ ] Validar, gerar o build, publicar e verificar a URL pública.
+- [x] Extrair e analisar as questões dos PDFs IndividualResponse10, 11, 12, LearningPlatform13 e LearningPlatform14.
+- [x] Traduzir, incorporar as questões e criar os novos módulos no filtro.
+- [x] Validar, gerar o build, publicar e verificar a URL pública.
