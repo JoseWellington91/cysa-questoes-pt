@@ -46,23 +46,95 @@ function getFilteredQuestions(moduleFilter: string): Question[] {
   return questions.filter((q) => q.id >= mod.start && q.id <= mod.end);
 }
 
+type ExamDomain = {
+  label: string;
+  weight: number;
+  count: number;
+  ranges: Array<[number, number]>;
+};
+
+// Simulado oficial CySA+ V3: 85 questões distribuídas pelos pesos do conteúdo oficial.
+// O método de maior resto converte 33% / 30% / 20% / 17% em 28 / 26 / 17 / 14 questões.
+const OFFICIAL_EXAM_BLUEPRINT: ExamDomain[] = [
+  {
+    label: "Operações de segurança",
+    weight: 33,
+    count: 28,
+    ranges: [[22, 81], [170, 206], [217, 236]],
+  },
+  {
+    label: "Gestão de vulnerabilidades",
+    weight: 30,
+    count: 26,
+    ranges: [[1, 21], [82, 132], [207, 216], [237, 259]],
+  },
+  {
+    label: "Gestão de resposta a incidentes",
+    weight: 20,
+    count: 17,
+    ranges: [[133, 153]],
+  },
+  {
+    label: "Relatórios e comunicação",
+    weight: 17,
+    count: 14,
+    ranges: [[154, 169]],
+  },
+];
+
+function shuffleQuestions(items: Question[]): Question[] {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+  }
+  return shuffled;
+}
+
+function createOfficialExam(): Question[] {
+  const selected = OFFICIAL_EXAM_BLUEPRINT.flatMap((domain) => {
+    const pool = questions.filter((question) =>
+      domain.ranges.some(([start, end]) => question.id >= start && question.id <= end),
+    );
+    if (pool.length < domain.count) {
+      throw new Error(`Banco insuficiente para ${domain.label}.`);
+    }
+    return shuffleQuestions(pool).slice(0, domain.count);
+  });
+  return shuffleQuestions(selected);
+}
+
 type AnswerState = Record<number, Set<string>>;
 
 export default function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [answers, setAnswers] = useState<AnswerState>({});
-  const [submitted, setSubmitted] = useState<Record<number, boolean>>({});
-  const [showResults, setShowResults] = useState(false);
   const [examMode, setExamMode] = useState(false);
   const [moduleFilter, setModuleFilter] = useState("Todos");
+  const [studyCurrentIndex, setStudyCurrentIndex] = useState(0);
+  const [studyAnswers, setStudyAnswers] = useState<AnswerState>({});
+  const [studySubmitted, setStudySubmitted] = useState<Record<number, boolean>>({});
+  const [studyShowResults, setStudyShowResults] = useState(false);
+  const [examQuestions, setExamQuestions] = useState<Question[]>(() => createOfficialExam());
+  const [examCurrentIndex, setExamCurrentIndex] = useState(0);
+  const [examAnswers, setExamAnswers] = useState<AnswerState>({});
+  const [examSubmitted, setExamSubmitted] = useState<Record<number, boolean>>({});
+  const [examShowResults, setExamShowResults] = useState(false);
 
-  const filteredQuestions = useMemo(
+  const studyQuestions = useMemo(
     () => getFilteredQuestions(moduleFilter),
     [moduleFilter]
   );
 
-  const currentQuestion = filteredQuestions[currentIndex];
-  const totalQuestions = filteredQuestions.length;
+  const activeQuestions = examMode ? examQuestions : studyQuestions;
+  const currentIndex = examMode ? examCurrentIndex : studyCurrentIndex;
+  const setCurrentIndex = examMode ? setExamCurrentIndex : setStudyCurrentIndex;
+  const answers = examMode ? examAnswers : studyAnswers;
+  const setAnswers = examMode ? setExamAnswers : setStudyAnswers;
+  const submitted = examMode ? examSubmitted : studySubmitted;
+  const setSubmitted = examMode ? setExamSubmitted : setStudySubmitted;
+  const showResults = examMode ? examShowResults : studyShowResults;
+  const setShowResults = examMode ? setExamShowResults : setStudyShowResults;
+  const currentQuestion = activeQuestions[currentIndex];
+  const totalQuestions = activeQuestions.length;
 
   const selectedAnswers = useMemo(
     () => answers[currentQuestion?.id ?? -1] ?? new Set<string>(),
@@ -91,13 +163,13 @@ export default function Home() {
         return newAnswers;
       });
     },
-    [isSubmitted, currentQuestion]
+    [isSubmitted, currentQuestion, setAnswers]
   );
 
   const handleSubmit = useCallback(() => {
     if (selectedAnswers.size === 0 || !currentQuestion) return;
     setSubmitted((prev) => ({ ...prev, [currentQuestion.id]: true }));
-  }, [selectedAnswers, currentQuestion?.id]);
+  }, [selectedAnswers, currentQuestion?.id, setSubmitted]);
 
   const goToQuestion = useCallback(
     (index: number) => {
@@ -105,34 +177,54 @@ export default function Home() {
         setCurrentIndex(index);
       }
     },
-    [totalQuestions]
+    [totalQuestions, setCurrentIndex]
   );
 
   const handleNext = useCallback(() => {
     if (currentIndex < totalQuestions - 1) {
       setCurrentIndex(currentIndex + 1);
     }
-  }, [currentIndex, totalQuestions]);
+  }, [currentIndex, totalQuestions, setCurrentIndex]);
 
   const handlePrev = useCallback(() => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     }
-  }, [currentIndex]);
+  }, [currentIndex, setCurrentIndex]);
 
   const handleReset = useCallback(() => {
-    setAnswers({});
-    setSubmitted({});
-    setShowResults(false);
-    setCurrentIndex(0);
-  }, []);
+    if (examMode) {
+      setExamQuestions(createOfficialExam());
+      setExamAnswers({});
+      setExamSubmitted({});
+      setExamShowResults(false);
+      setExamCurrentIndex(0);
+      return;
+    }
+
+    setStudyAnswers({});
+    setStudySubmitted({});
+    setStudyShowResults(false);
+    setStudyCurrentIndex(0);
+  }, [examMode]);
+
+  const handleModeToggle = useCallback(() => {
+    if (!examMode) {
+      setExamQuestions(createOfficialExam());
+      setExamAnswers({});
+      setExamSubmitted({});
+      setExamShowResults(false);
+      setExamCurrentIndex(0);
+    }
+    setExamMode((currentMode) => !currentMode);
+  }, [examMode]);
 
   const handleModuleChange = useCallback((mod: string) => {
     setModuleFilter(mod);
-    setAnswers({});
-    setSubmitted({});
-    setShowResults(false);
-    setCurrentIndex(0);
+    setStudyAnswers({});
+    setStudySubmitted({});
+    setStudyShowResults(false);
+    setStudyCurrentIndex(0);
   }, []);
 
   const answeredCount = useMemo(
@@ -141,7 +233,7 @@ export default function Home() {
   );
 
   const correctCount = useMemo(() => {
-    return filteredQuestions.filter((q) => {
+    return activeQuestions.filter((q) => {
       const userAnswers = answers[q.id] ?? new Set<string>();
       if (userAnswers.size === 0) return false;
       const correctLetters = q.options
@@ -150,7 +242,7 @@ export default function Home() {
       if (userAnswers.size !== correctLetters.length) return false;
       return correctLetters.every((letter) => userAnswers.has(letter));
     }).length;
-  }, [answers]);
+  }, [answers, activeQuestions]);
 
   const submittedCount = useMemo(
     () => Object.keys(submitted).filter((id) => submitted[+id]).length,
@@ -175,10 +267,10 @@ export default function Home() {
         correctCount={correctCount}
         totalQuestions={totalQuestions}
         answers={answers}
-        filteredQuestions={filteredQuestions}
+        filteredQuestions={activeQuestions}
         onReset={handleReset}
         onReview={(id) => {
-          const idx = filteredQuestions.findIndex((q) => q.id === id);
+          const idx = activeQuestions.findIndex((q) => q.id === id);
           if (idx >= 0) {
             setShowResults(false);
             setCurrentIndex(idx);
@@ -210,7 +302,7 @@ export default function Home() {
             <Button
               variant={examMode ? "default" : "outline"}
               size="sm"
-              onClick={() => setExamMode(!examMode)}
+              onClick={handleModeToggle}
               className="font-mono-display text-xs"
             >
               {examMode ? (
@@ -229,25 +321,47 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Module filter + Progress bar */}
+      {/* The study filter remains unchanged; simulation shows only the official blueprint. */}
       <div className="border-b border-border bg-card/40">
         <div className="container py-3">
-          <div className="flex items-center gap-2 mb-3 overflow-x-auto pb-1">
-            <Filter className="w-3.5 h-3.5 text-primary shrink-0" />
-            {MODULE_RANGES.map((mod) => (
-              <button
-                key={mod.label}
-                onClick={() => handleModuleChange(mod.label)}
-                className={`font-mono-display text-xs px-3 py-1.5 rounded-md whitespace-nowrap transition-all ${
-                  moduleFilter === mod.label
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-muted-foreground border border-border hover:border-primary/30"
-                }`}
-              >
-                {mod.label}
-              </button>
-            ))}
-          </div>
+          {!examMode ? (
+            <div className="flex items-center gap-2 mb-3 overflow-x-auto pb-1">
+              <Filter className="w-3.5 h-3.5 text-primary shrink-0" />
+              {MODULE_RANGES.map((mod) => (
+                <button
+                  key={mod.label}
+                  onClick={() => handleModuleChange(mod.label)}
+                  className={`font-mono-display text-xs px-3 py-1.5 rounded-md whitespace-nowrap transition-all ${
+                    moduleFilter === mod.label
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-muted-foreground border border-border hover:border-primary/30"
+                  }`}
+                >
+                  {mod.label}
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 mb-3 overflow-x-auto pb-1">
+              <Brain className="w-3.5 h-3.5 text-primary shrink-0" />
+              <Badge variant="outline" className="font-mono-display text-xs border-primary/40 text-primary whitespace-nowrap">
+                Simulado oficial · 85 questões
+              </Badge>
+              {OFFICIAL_EXAM_BLUEPRINT.map((domain) => (
+                <Badge key={domain.label} variant="secondary" className="font-mono-display text-xs whitespace-nowrap">
+                  {domain.label}: {domain.count} ({domain.weight}%)
+                </Badge>
+              ))}
+            </div>
+          )}
+          {examMode && (
+            <div className="flex items-center gap-3 mb-3 font-mono-display text-[10px] uppercase tracking-[0.14em] text-muted-foreground overflow-x-auto whitespace-nowrap">
+              <span className="text-primary">[EXAM_BLUEPRINT: CYSA+ V3]</span>
+              <span>SELEÇÃO ALEATÓRIA</span>
+              <span>GABARITO BLOQUEADO</span>
+              <span>REVISÃO APÓS FINALIZAÇÃO</span>
+            </div>
+          )}
           <div className="flex items-center justify-between mb-2">
             <span className="font-mono-display text-xs text-muted-foreground">
               Progresso: {answeredCount}/{totalQuestions}
@@ -265,7 +379,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-6">
           {/* Question card */}
           <div className="space-y-4">
-            <Card className="p-6 lg:p-8 border-border bg-card shadow-lg">
+            <Card className={`p-6 lg:p-8 border-border bg-card shadow-lg ${examMode ? "lg:min-h-[32rem]" : ""}`}>
               {/* Question header */}
               <div className="flex items-start justify-between gap-4 mb-6">
                 <div className="flex items-center gap-3">
@@ -296,8 +410,8 @@ export default function Home() {
               <div className="space-y-3">
                 {currentQuestion.options.map((option) => {
                   const isSelected = selectedAnswers.has(option.letter);
-                  const showCorrect = isSubmitted && option.correct;
-                  const showWrong = isSubmitted && isSelected && !option.correct;
+                  const showCorrect = isSubmitted && !examMode && option.correct;
+                  const showWrong = isSubmitted && !examMode && isSelected && !option.correct;
 
                   return (
                     <button
@@ -353,13 +467,13 @@ export default function Home() {
                     size="lg"
                   >
                     <ListChecks className="w-4 h-4 mr-2" />
-                    Confirmar Resposta
+                    {examMode ? "Registrar Resposta" : "Confirmar Resposta"}
                   </Button>
                 </div>
               )}
 
               {/* Explanation */}
-              {isSubmitted && (
+              {isSubmitted && !examMode && (
                 <div className="mt-6 space-y-4">
                   {/* Result banner */}
                   <div
@@ -391,27 +505,25 @@ export default function Home() {
                   </div>
 
                   {/* Explanation text */}
-                  {!examMode && (
-                    <div className="p-5 rounded-lg border border-border bg-secondary/20">
-                      <div className="flex items-center gap-2 mb-3">
-                        <BookOpen className="w-4 h-4 text-primary" />
-                        <span className="font-mono-display text-xs font-semibold text-primary uppercase tracking-wider">
-                          Explicação
-                        </span>
-                      </div>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        {currentQuestion.explanation}
-                      </p>
+                  <div className="p-5 rounded-lg border border-border bg-secondary/20">
+                    <div className="flex items-center gap-2 mb-3">
+                      <BookOpen className="w-4 h-4 text-primary" />
+                      <span className="font-mono-display text-xs font-semibold text-primary uppercase tracking-wider">
+                        Explicação
+                      </span>
                     </div>
-                  )}
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {currentQuestion.explanation}
+                    </p>
+                  </div>
+                </div>
+              )}
 
-                  {examMode && (
-                    <div className="p-4 rounded-lg border border-border bg-secondary/20 text-center">
-                      <p className="text-sm text-muted-foreground">
-                        Modo Simulado: a explicação será exibida na tela de resultados.
-                      </p>
-                    </div>
-                  )}
+              {isSubmitted && examMode && (
+                <div className="mt-6 p-4 rounded-lg border border-primary/30 bg-primary/5 text-center">
+                  <p className="font-mono-display text-xs text-primary">
+                    Resposta registrada. O resultado será exibido ao finalizar o simulado.
+                  </p>
                 </div>
               )}
             </Card>
@@ -442,11 +554,11 @@ export default function Home() {
               ) : (
                 <Button
                   onClick={() => setShowResults(true)}
-                  disabled={submittedCount === 0}
+                  disabled={examMode ? submittedCount < totalQuestions : submittedCount === 0}
                   className="font-mono-display text-sm"
                 >
                   <Trophy className="w-4 h-4 mr-1.5" />
-                  Ver Resultados
+                  {examMode ? "Finalizar Simulado" : "Ver Resultados"}
                 </Button>
               )}
             </div>
@@ -454,15 +566,15 @@ export default function Home() {
 
           {/* Sidebar - Question navigator */}
           <div className="hidden lg:block">
-            <Card className="p-4 border-border bg-card sticky top-32">
+            <Card className={`p-4 border-border bg-card sticky top-32 ${examMode ? "max-h-[calc(100vh-10rem)] overflow-y-auto" : ""}`}>
               <div className="flex items-center gap-2 mb-4">
                 <ListChecks className="w-4 h-4 text-primary" />
                 <span className="font-mono-display text-xs font-semibold text-primary uppercase tracking-wider">
-                  Navegação
+                  {examMode ? "Status da prova // 85" : "Navegação"}
                 </span>
               </div>
               <div className="grid grid-cols-5 gap-2">
-                {filteredQuestions.map((q, idx) => {
+                {activeQuestions.map((q, idx) => {
                   const userAns = answers[q.id] ?? new Set<string>();
                   const isAnswered = userAns.size > 0;
                   const isSubmittedQ = submitted[q.id] ?? false;
@@ -470,10 +582,11 @@ export default function Home() {
                     .filter((o) => o.correct)
                     .map((o) => o.letter);
                   const isCorrect =
+                    !examMode &&
                     isSubmittedQ &&
                     userAns.size === correctLetters.length &&
                     correctLetters.every((l) => userAns.has(l));
-                  const isWrong = isSubmittedQ && !isCorrect;
+                  const isWrong = !examMode && isSubmittedQ && !isCorrect;
                   const isCurrent = idx === currentIndex;
 
                   return (
@@ -501,14 +614,18 @@ export default function Home() {
               </div>
               <Separator className="my-4" />
               <div className="space-y-2 text-xs">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded bg-primary" />
-                  <span className="text-muted-foreground">Correta</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded bg-destructive" />
-                  <span className="text-muted-foreground">Incorreta</span>
-                </div>
+                {!examMode && (
+                  <>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded bg-primary" />
+                      <span className="text-muted-foreground">Correta</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded bg-destructive" />
+                      <span className="text-muted-foreground">Incorreta</span>
+                    </div>
+                  </>
+                )}
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded bg-primary/20 border border-primary/40" />
                   <span className="text-muted-foreground">Respondida</span>
@@ -537,7 +654,7 @@ export default function Home() {
       <div className="lg:hidden border-t border-border bg-card/80 backdrop-blur-xl sticky bottom-0">
         <div className="container py-3">
           <div className="flex items-center gap-2 overflow-x-auto pb-1">
-            {filteredQuestions.map((q, idx) => {
+            {activeQuestions.map((q, idx) => {
               const userAns = answers[q.id] ?? new Set<string>();
               const isAnswered = userAns.size > 0;
               const isSubmittedQ = submitted[q.id] ?? false;
@@ -545,10 +662,11 @@ export default function Home() {
                 .filter((o) => o.correct)
                 .map((o) => o.letter);
               const isCorrect =
+                !examMode &&
                 isSubmittedQ &&
                 userAns.size === correctLetters.length &&
                 correctLetters.every((l) => userAns.has(l));
-              const isWrong = isSubmittedQ && !isCorrect;
+              const isWrong = !examMode && isSubmittedQ && !isCorrect;
               const isCurrent = idx === currentIndex;
 
               return (

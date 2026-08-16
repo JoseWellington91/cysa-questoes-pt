@@ -29,3 +29,9 @@ Ferramenta de estudo para certificação de segurança da informação (CompTIA 
 **Brand Essence**: Ferramenta de estudo séria para profissionais de segurança. Foco, clareza, eficiência.
 
 **Signature Brand Color**: Ciano `#22d3ee` (cyan-400)
+
+## Style Decisions
+
+- O **Modo Estudo** permanece visualmente e funcionalmente inalterado por solicitação expressa do usuário.
+- O **Modo Simulado** usa telemetria curta em estilo SOC para comunicar blueprint, seleção aleatória, bloqueio do gabarito e revisão posterior, sem competir com o enunciado.
+- No Modo Simulado, a navegação de 85 itens é limitada à altura da viewport e recebe rolagem própria para que o card da questão permaneça a âncora visual.

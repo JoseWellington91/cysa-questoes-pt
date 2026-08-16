@@ -10,3 +10,6 @@
 - [x] Extrair e analisar as questões dos PDFs IndividualResponse10, 11, 12, LearningPlatform13 e LearningPlatform14.
 - [x] Traduzir, incorporar as questões e criar os novos módulos no filtro.
 - [x] Validar, gerar o build, publicar e verificar a URL pública.
+- [ ] Mapear as questões aos quatro domínios oficiais do exame CySA+ V3 e definir a prova de 85 itens.
+- [ ] Implementar o Modo Simulado aleatório sem alterar o Modo Estudo.
+- [ ] Validar a distribuição, gerar o build, publicar e verificar a URL pública.
