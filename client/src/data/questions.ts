@@ -2311,4 +2311,1274 @@ export const questions: Question[] = [
     ],
     explanation: "Um relatório de lições aprendidas ou after-action descreve o que ocorreu e recomenda mudanças para melhorar a resposta futura. Relatórios regulatórios, policiais e análises forenses cumprem finalidades específicas diferentes.",
   },
+  {
+    id: 170,
+    category: "Redes e Ferramentas de Diagnóstico",
+    question: "Um administrador de rede recebeu relatos de problemas intermitentes de conectividade. Para diagnosticar o problema, o administrador de rede decidiu usar o tcpdump. Quais das alternativas a seguir são as funcionalidades primárias do uso do tcpdump neste cenário? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Implementar regras de firewall baseadas em rede", correct: false },
+      { letter: "B", text: "Monitorar o desempenho da rede", correct: true },
+      { letter: "C", text: "Capturar e analisar pacotes de rede para fins de solução de problemas", correct: true },
+      { letter: "D", text: "Detectar e prevenir atividades maliciosas na rede", correct: false },
+    ],
+    explanation: "Neste cenário, o administrador de rede está usando o tcpdump para monitorar o desempenho da rede, e ele pode fornecer informações que o administrador de rede pode usar neste cenário.\n\nO administrador também está usando o tcpdump para capturar e analisar pacotes de rede para fins de solução de problemas, como diagnosticar problemas de rede ou analisar o comportamento da rede.\n\nNeste cenário, o administrador não está usando o tcpdump para detectar e prevenir atividades maliciosas na rede, embora possa usá-lo para esse fim, se necessário.\n\nO administrador não está usando o tcpdump para implementar regras de firewall baseadas em rede, embora o tcpdump forneça informações que podem criar tais regras.",
+  },
+
+  {
+    id: 171,
+    category: "Operações de Segurança e SOAR",
+    question: "Um analista de segurança é responsável por detectar e responder a incidentes de segurança na organização. O analista de segurança decidiu implementar uma plataforma de orquestração, automação e resposta de segurança (SOAR). Qual é o principal objetivo do uso de uma plataforma SOAR neste cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Automatizar respostas a incidentes", correct: true },
+      { letter: "B", text: "Armazenar e gerenciar dados relacionados à segurança", correct: false },
+      { letter: "C", text: "Fornecer inteligência de ameaças em tempo real para equipes de segurança", correct: false },
+      { letter: "D", text: "Monitorar e controlar o acesso a informações sensíveis", correct: false },
+    ],
+    explanation: "A automação de respostas a incidentes é um dos principais benefícios do uso de uma plataforma de orquestração, automação e resposta de segurança (SOAR). O analista de segurança pode responder a incidentes de forma mais rápida e eficaz automatizando tarefas rotineiras e repetitivas.\n\nEmbora o fornecimento de inteligência de ameaças em tempo real seja um recurso valioso de uma plataforma SOAR, não é o objetivo principal neste cenário.\n\nO armazenamento e o gerenciamento de dados relacionados à segurança são um aspecto importante do uso de uma plataforma SOAR, mas há outros propósitos neste cenário.\n\nO monitoramento e o controle do acesso a informações sensíveis são críticos para as operações de segurança, mas existem outros propósitos para o uso de uma plataforma SOAR neste cenário.",
+  },
+
+  {
+    id: 172,
+    category: "Segurança de E-mail e Autenticação",
+    question: "Uma empresa de comércio eletrônico sofreu recentemente uma série de ataques de phishing direcionados aos seus funcionários. A empresa encarrega a equipe de segurança de implementar uma solução para evitar a falsificação de e-mail (spoofing) e proteger contra futuras tentativas de phishing. Qual das seguintes tecnologias seria a mais eficaz para atingir esse objetivo?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Autenticação de dois fatores", correct: false },
+      { letter: "B", text: "Autenticação Baseada em DNS de Entidades Nomeadas (DANE)", correct: false },
+      { letter: "C", text: "Sender Policy Framework (SPF)", correct: true },
+      { letter: "D", text: "Infraestrutura de chave pública (PKI)", correct: false },
+    ],
+    explanation: "O Sender Policy Framework (SPF) verifica a autenticidade do remetente de uma mensagem de e-mail. Ele ajuda a evitar a falsificação de e-mail (spoofing) verificando o domínio de envio e autorizando o usuário a enviar mensagens a partir desse domínio.\n\nA autenticação de dois fatores adiciona uma camada extra de segurança a um processo de login, exigindo que o usuário forneça duas formas de autenticação. Ela não impede diretamente e-mails falsificados.\n\nA Autenticação Baseada em DNS de Entidades Nomeadas (DANE) fornece um mecanismo para verificar a autenticidade do certificado Transport Layer Security (TLS) de um servidor, embora não proteja contra ataques de phishing.\n\nEmbora uma infraestrutura de chave pública (PKI) forneça um nível básico de segurança para dados em trânsito, ela não protege contra ataques de phishing.",
+  },
+
+  {
+    id: 173,
+    category: "Frameworks de Segurança e Testes",
+    question: "Uma organização planeja conduzir uma avaliação de segurança e deseja utilizar uma abordagem abrangente e aberta para orientar o processo de avaliação. Qual das alternativas a seguir abrange vários aspectos de segurança, como segurança física, de informação e sem fio, tornando-a a escolha mais apropriada para a avaliação de segurança da organização?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "MITRE ATT&CK", correct: false },
+      { letter: "B", text: "Open Source Security Testing Methodology Manual (OSSTMM)", correct: true },
+      { letter: "C", text: "National Institute of Standards and Technology (NIST) Cybersecurity Framework", correct: false },
+      { letter: "D", text: "Open Worldwide Application Security Project (OWASP) Top Ten", correct: false },
+    ],
+    explanation: "O Open Source Security Testing Methodology Manual (OSSTMM) abrange vários aspectos de segurança, como segurança física, de informação e sem fio, tornando-a a escolha mais apropriada para a avaliação de segurança da organização.\n\nO Open Worldwide Application Security Project (OWASP) Top Ten lista os riscos de segurança de aplicativos web mais críticos, mas não se concentra especificamente em orientar o processo de avaliação.\n\nO MITRE ATT&CK é uma base de conhecimento de táticas e técnicas usadas por adversários cibernéticos. É útil para entender e detectar ameaças, mas não se concentra especificamente em orientar testes e avaliações de segurança.\n\nO NIST Cybersecurity Framework é um recurso valioso para o gerenciamento de riscos. No entanto, é menos abrangente para testes e avaliações de segurança do que o OSSTMM.",
+  },
+
+  {
+    id: 174,
+    category: "Frameworks de Segurança e Testes",
+    question: "Um administrador de rede em uma grande empresa está realizando uma avaliação de segurança da infraestrutura de rede da empresa. O administrador deve determinar o framework mais adequado para conduzir uma avaliação de segurança abrangente. Qual dos seguintes frameworks seria o mais apropriado para o administrador de rede?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "International Organization for Standardization (ISO) 27001/27002", correct: false },
+      { letter: "B", text: "National Institute of Standards and Technology (NIST) Cybersecurity Framework", correct: false },
+      { letter: "C", text: "Open Source Security Testing Methodology Manual (OSSTMM)", correct: true },
+      { letter: "D", text: "Federal Information Security Management Act (FISMA)", correct: false },
+    ],
+    explanation: "O Open Source Security Testing Methodology Manual (OSSTMM) é uma metodologia abrangente para a realização de uma avaliação de segurança de uma infraestrutura de rede.\n\nO NIST Cybersecurity Framework fornece diretrizes para melhorar os processos de gerenciamento de riscos de cibersegurança e a postura geral de cibersegurança. Ele não fornece orientações específicas sobre como realizar uma avaliação de segurança abrangente.\n\nO Federal Information Security Management Act (FISMA) é um conjunto de padrões de segurança para agências do governo federal. Ele não fornece uma metodologia abrangente para a realização de uma avaliação de segurança.\n\nA International Organization for Standardization (ISO) 27001/27002 é um conjunto de padrões internacionais para gerenciamento de segurança da informação. Embora forneça uma visão abrangente do gerenciamento de segurança da informação, pode ser opcional ou adequado para um ambiente de pequenos negócios.",
+  },
+
+  {
+    id: 175,
+    category: "Segurança de Endpoints e EDR",
+    question: "Um analista de segurança em uma grande organização observa um pico recente em incidentes de segurança. Para aprimorar a estratégia de segurança de endpoint, uma solução de detecção e resposta de endpoint (EDR) é implementada. Qual das alternativas a seguir descreve melhor o principal recurso do EDR e como ele ajuda o analista de segurança a detectar e responder a atividades maliciosas na rede da organização?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Realiza análise forense em endpoints", correct: false },
+      { letter: "B", text: "Fornece visibilidade em tempo real da atividade dos endpoints", correct: true },
+      { letter: "C", text: "Integra-se com outras soluções de segurança", correct: false },
+      { letter: "D", text: "Automatiza tarefas relacionadas à segurança", correct: false },
+    ],
+    explanation: "Fornecer visibilidade em tempo real da atividade dos endpoints é a principal função da detecção e resposta de endpoint (EDR), permitindo que o analista detecte e responda a atividades maliciosas prontamente e melhore a segurança geral da rede da organização.\n\nA automação de tarefas pode melhorar a eficiência, mas existem outras funções de EDR ao detectar e responder a atividades maliciosas em tempo real.\n\nA integração com outras soluções de segurança pode fornecer uma visão mais abrangente das atividades relacionadas à segurança.\n\nA realização de análise forense em endpoints concentra-se em um aspecto específico de uma solução EDR, em vez de descrever o principal recurso que ajuda o analista de segurança a detectar e responder a atividades maliciosas.",
+  },
+
+  {
+    id: 176,
+    category: "Inteligência de Ameaças e MITRE ATT&CK",
+    question: "Uma organização busca melhorar suas capacidades de inteligência de ameaças aproveitando as matrizes do MITRE ATT&CK. Como os IDs exclusivos e as categorias de táticas desse recurso podem ajudar a organização a reconhecer e se proteger contra ataques específicos?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Definindo a sequência do ataque e realizando uma análise do ciclo de vida", correct: false },
+      { letter: "B", text: "Fornecendo uma visão geral da superfície de ataque, incluindo metadados e análise de localização geográfica", correct: false },
+      { letter: "C", text: "Analisando a causa raiz do ataque e fornecendo um histórico detalhado das ações do invasor", correct: false },
+      { letter: "D", text: "Identificando padrões em TTPs usados por grupos de ameaças e desenvolvendo estratégias de defesa", correct: true },
+    ],
+    explanation: "As matrizes do MITRE ATT&CK identificam padrões, fornecendo detalhes sobre as táticas, técnicas e procedimentos (TTPs) usados por diferentes grupos de ameaças, e desenvolvem estratégias para se defender contra eles.\n\nO framework MITRE ATT&CK não define a sequência em que os invasores podem implantar qualquer tática e exige que os analistas interpretem cada ciclo de vida do ataque a partir de evidências locais.\n\nA análise de metadados pode ser útil para identificar o endereço IP de origem e a localização geográfica do invasor, mas este não é o foco principal das matrizes do MITRE ATT&CK.\n\nO framework categoriza técnicas por táticas, mas não fornece um histórico completo das ações do invasor ou a causa raiz de cada ataque.",
+  },
+
+  {
+    id: 177,
+    category: "Frameworks de Ameaças e MITRE ATT&CK",
+    question: "Um analista de segurança em uma grande organização está investigando um ataque cibernético recente. O analista precisa determinar o framework mais adequado para analisar as táticas, técnicas e procedimentos (TTPs) do invasor. Qual dos seguintes frameworks seria o mais apropriado para o analista de segurança usar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "National Institute of Standards and Technology (NIST)", correct: false },
+      { letter: "B", text: "SANS", correct: false },
+      { letter: "C", text: "Cyber kill chain", correct: false },
+      { letter: "D", text: "MITRE ATT&CK", correct: true },
+    ],
+    explanation: "O MITRE ATT&CK é um framework abrangente para analisar e compreender as táticas, técnicas e procedimentos (TTPs) usados por invasores em ataques cibernéticos.\n\nEmbora a cyber kill chain forneça uma visão detalhada dos diferentes estágios de um ataque, ela não fornece tantos detalhes sobre as táticas, técnicas e procedimentos usados pelo invasor quanto o MITRE ATT&CK.\n\nA lista dos 20 Controles Críticos de Segurança do SANS Institute lista os 20 controles de segurança mais importantes que as organizações devem implementar para se protegerem contra ataques cibernéticos. Ele não se especializa em táticas, técnicas e procedimentos (TTPs).\n\nEmbora o National Institute of Standards and Technology (NIST) forneça uma visão abrangente da segurança da informação, ele não fornece um framework para a análise de táticas, técnicas e procedimentos (TTPs).",
+  },
+
+  {
+    id: 178,
+    category: "Metodologias de Teste e OSSTMM",
+    question: "Uma empresa descobriu que dados confidenciais foram vazados para o público. A equipe de TI precisa avaliar as vulnerabilidades potenciais e identificar os vetores de ataque que poderiam ter levado a este incidente. O que fornece um framework abrangente para testar a segurança de sistemas de software e inclui a identificação de ativos do sistema e análise de vulnerabilidade?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Open Worldwide Application Security Project (OWASP) Testing Guide", correct: false },
+      { letter: "B", text: "Open Source Security Testing Methodology Manual (OSSTMM)", correct: true },
+      { letter: "C", text: "NIST Special Publication 800-53", correct: false },
+      { letter: "D", text: "Penetration Testing Execution Standard (PTES)", correct: false },
+    ],
+    explanation: "O OSSTMM fornece um framework abrangente para testar a segurança de sistemas de software. Ele inclui identificação de ativos do sistema, modelagem de ameaças e análise de vulnerabilidade.\n\nO Guia de Testes da OWASP concentra-se no teste de aplicações web em busca de vulnerabilidades de segurança. Ele fornece uma abordagem estruturada para testar vulnerabilidades como injeção e ataques de cross-site scripting (XSS). No entanto, este framework não se aplica ao cenário atual.\n\nO PTES fornece um framework para a realização de testes de penetração. Ele inclui interações pré-contratação, coleta de inteligência e modelagem de ameaças. Embora o PTES possa ser útil para testar vulnerabilidades de rede, pode não ser a melhor opção para avaliar a violação de dados atual.\n\nA Publicação Especial (SP) 800-53 do NIST fornece diretrizes para controles de segurança e privacidade para sistemas de informação e organizações federais.",
+  },
+
+  {
+    id: 179,
+    category: "Metodologias de Teste e OSSTMM",
+    question: "Uma empresa planeja conduzir um teste de segurança em seus sistemas para identificar vulnerabilidades e fragilidades. A empresa decidiu usar um framework para garantir que os testes sejam conduzidos de forma completa e consistente. Qual framework de metodologia a empresa poderia usar para conduzir testes de segurança que forneça procedimentos detalhados para o gerenciamento da segurança operacional?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Open Worldwide Application Security Project (OWASP)", correct: false },
+      { letter: "B", text: "National Institute of Standards and Technology (NIST) Cybersecurity Framework", correct: false },
+      { letter: "C", text: "Payment Card Industry Data Security Standard (PCI DSS)", correct: false },
+      { letter: "D", text: "Open Source Security Testing Methodology Manual (OSSTMM)", correct: true },
+    ],
+    explanation: "O Open Source Security Testing Methodology Manual (OSSTMM) é um guia abrangente para testes de segurança que fornece um conjunto detalhado de procedimentos para gerenciar a segurança operacional, incluindo avaliação de vulnerabilidade e gerenciamento de riscos.\n\nO NIST Cybersecurity Framework fornece diretrizes de gerenciamento de risco e cibersegurança, mas não fornece procedimentos detalhados específicos para testes de segurança operacional.\n\nO PCI DSS é um padrão de segurança para organizações que lidam com cartões de crédito, focando na proteção de dados de titulares de cartões, mas não é um framework geral para testes de segurança operacional.\n\nA OWASP concentra-se na segurança de aplicações web e fornece diretrizes de segurança, mas não é um framework metodológico geral para testes de segurança operacional e de infraestrutura.",
+  },
+
+  {
+    id: 180,
+    category: "Modelos de Ataque e Cyber Kill Chain",
+    question: "Um analista de segurança em uma grande organização está investigando um ataque cibernético recente. O analista quer usar um modelo para analisar o ataque e entender os diferentes estágios do ataque. Um colega de trabalho sugere o modelo desenvolvido pela Lockheed Martin. Qual dos seguintes modelos foi desenvolvido por essa organização?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "National Institute of Standards and Technology (NIST)", correct: false },
+      { letter: "B", text: "Cyber kill chain", correct: true },
+      { letter: "C", text: "Diamond model", correct: false },
+      { letter: "D", text: "MITRE ATT&CK", correct: false },
+    ],
+    explanation: "O modelo Cyber Kill Chain foi desenvolvido pela Lockheed Martin para descrever os estágios de um ataque cibernético, desde a sondagem inicial até a exfiltração de dados.\n\nO NIST desenvolve padrões e diretrizes para segurança da informação e gerenciamento de riscos, mas não desenvolveu o modelo Cyber Kill Chain.\n\nO Diamond Model of Intrusion Analysis foi desenvolvido por pesquisadores do governo dos EUA, não pela Lockheed Martin.\n\nO MITRE ATT&CK é uma base de conhecimento desenvolvida pela MITRE Corporation, e não pela Lockheed Martin.",
+  },
+
+  {
+    id: 181,
+    category: "Inteligência de Ameaças e MITRE ATT&CK",
+    question: "Uma organização encarregou um administrador de rede de analisar um ciberataque recente no sistema. Eles querem entender a metodologia de ataque usada pelos invasores. Qual framework o administrador pode usar para acessar um banco de dados de táticas, técnicas e procedimentos (TTPs) conhecidos usados por diferentes grupos de atores de ameaças?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Diamond model of intrusion analysis", correct: false },
+      { letter: "B", text: "MITRE ATT&CK", correct: true },
+      { letter: "C", text: "Cyber kill chain", correct: false },
+      { letter: "D", text: "Open Source Security Testing Methodology Manual (OSSTMM)", correct: false },
+    ],
+    explanation: "O MITRE ATT&CK é um framework e base de conhecimento amplamente utilizado que cataloga táticas, técnicas e procedimentos (TTPs) conhecidos de atores de ameaças com base em observações do mundo real.\n\nO Diamond Model of Intrusion Analysis é usado para análise formal de eventos de intrusão e mapeamento de relações, mas não é um banco de dados abrangente de TTPs de grupos de ameaças como o MITRE ATT&CK.\n\nA Cyber Kill Chain descreve as fases de um ataque cibernético, mas não serve como um banco de dados detalhado de TTPs específicos de grupos de ameaças.\n\nO OSSTMM é uma metodologia para testes de segurança operacional, não um banco de dados de TTPs de atores de ameaças.",
+  },
+
+  {
+    id: 182,
+    category: "Segurança de E-mail e DMARC",
+    question: "Um administrador de rede em uma pequena empresa está preocupado com o número crescente de ataques de phishing que visam os funcionários da organização. O administrador deseja implementar uma solução abrangente para ajudar a proteger a organização contra esses tipos de ataques e impedir a falsificação de e-mails. Qual das seguintes tecnologias seria a mais eficaz?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Sender Policy Framework (SPF)", correct: false },
+      { letter: "B", text: "DomainKeys Identified Mail (DKIM)", correct: false },
+      { letter: "C", text: "Domain-based Message Authentication, Reporting, and Conformance (DMARC)", correct: true },
+      { letter: "D", text: "Pretty Good Privacy (PGP)", correct: false },
+    ],
+    explanation: "O Domain-based Message Authentication, Reporting, and Conformance (DMARC) se baseia no SPF e no DKIM para fornecer verificações de autenticação adicionais, relatórios e imposição de políticas, tornando-o a solução mais abrangente contra phishing e spoofing.\n\nO Sender Policy Framework (SPF) ajuda a verificar os remetentes autorizados, mas é menos abrangente que o DMARC, pois não fornece relatórios ou políticas de ação automatizadas.\n\nO DomainKeys Identified Mail (DKIM) adiciona uma assinatura digital aos e-mails, mas não fornece uma política abrangente de tratamento de falhas como o DMARC.\n\nO Pretty Good Privacy (PGP) é usado para criptografia de e-mails ponta a ponta e assinatura, mas não resolve o problema de spoofing de domínio em nível organizacional.",
+  },
+
+  {
+    id: 183,
+    category: "Análise de Malware e Cuckoo",
+    question: "Uma organização financeira está lidando com um aumento repentino de incidentes de segurança. O analista de segurança descobriu uma cepa de malware por trás dos incidentes. Para estudar seu comportamento e encontrar uma solução, o analista decide usar uma ferramenta específica para isolar e analisar o comportamento do malware. Que ferramenta o analista está usando?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Cuckoo", correct: true },
+      { letter: "B", text: "Pacu", correct: false },
+      { letter: "C", text: "Prowler", correct: false },
+      { letter: "D", text: "ScoutSuite", correct: false },
+    ],
+    explanation: "O Cuckoo Sandbox é um sistema automatizado de análise de malware de código aberto usado para isolar e analisar o comportamento de amostras de malware em um ambiente controlado.\n\nO Pacu é uma ferramenta de exploração e auditoria de segurança para a Amazon Web Services (AWS).\n\nO Prowler é uma ferramenta de auditoria de segurança para avaliação de conformidade e segurança na nuvem (AWS, GCP, Azure).\n\nO ScoutSuite é uma ferramenta de auditoria multi-cloud para avaliar a postura de segurança de ambientes de nuvem.",
+  },
+
+  {
+    id: 184,
+    category: "Segurança de E-mail e Análise",
+    question: "Um analista de segurança recebeu um e-mail suspeito que parece ser de um endereço reconhecido. O analista precisa determinar se o e-mail é legítimo ou não. Qual dos seguintes métodos de análise de e-mail seria o mais apropriado para o analista de segurança usar neste cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Link and Attachment Analysis", correct: false },
+      { letter: "B", text: "Sender Reputation Verification", correct: false },
+      { letter: "C", text: "Email Header Analysis", correct: true },
+      { letter: "D", text: "Analysis of Domain-based Message Authentication, Reporting, and Conformance (DMARC) Records", correct: false },
+    ],
+    explanation: "A Análise de Cabeçalho de E-mail (Email Header Analysis) é o método mais adequado para inspecionar os caminhos de roteamento, endereços IP de origem, assinaturas SPF/DKIM e verificar a autenticidade real de um e-mail suspeito.\n\nA análise de links e anexos é útil para verificar payloads maliciosos, mas o cabeçalho revela a veracidade do remetente e a rota da mensagem.\n\nA verificação de reputação do remetente ajuda a avaliar o IP ou domínio, mas a análise completa do cabeçalho é o procedimento fundamental inicial.\n\nA análise de registros DMARC verifica políticas de domínio, mas a análise de cabeçalho é a técnica imediata de inspeção da mensagem recebida.",
+  },
+
+  {
+    id: 185,
+    category: "Modelos de Intrusão (Diamond Model)",
+    question: "Um administrador de rede percebeu uma série de atividades de rede incomuns que indicam um possível ataque cibernético. O administrador analisa o evento usando um framework que explora as relações entre quatro recursos principais: adversário, capacidade, infraestrutura e vítima. Qual das seguintes metodologias o administrador de rede usaria para a revisão?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Incident response plan", correct: false },
+      { letter: "B", text: "Data breach assessment", correct: false },
+      { letter: "C", text: "Cyber kill chain", correct: false },
+      { letter: "D", text: "Diamond model of intrusion analysis", correct: true },
+    ],
+    explanation: "O Diamond Model of Intrusion Analysis é estruturado em torno de quatro nós principais: adversário, capacidade, infraestrutura e vítima, sendo usado para analisar eventos de intrusão cibernética.\n\nUm plano de resposta a incidentes orienta os passos operacionais após uma violação, não modelando analiticamente os eventos de intrusão.\n\nUma avaliação de violação de dados foca em determinar se dados foram comprometidos.\n\nA Cyber Kill Chain descreve as fases sequenciais de um ataque, e não os quatro eixos do modelo Diamond.",
+  },
+
+  {
+    id: 186,
+    category: "Modelos de Ataque e Cyber Kill Chain",
+    question: "Um administrador de rede recebe um alerta de que o sistema detectou um ciberataque na rede da organização. O administrador precisa identificar rapidamente o tipo de ataque e tomar a medida apropriada para mitigar a ameaça. Qual framework de metodologia o administrador pode usar para analisar os estágios de um ciberataque e entender como ele progride?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Cyber kill chain", correct: true },
+      { letter: "B", text: "MITRE ATT&CK", correct: false },
+      { letter: "C", text: "Diamond model", correct: false },
+      { letter: "D", text: "OSSTMM", correct: false },
+    ],
+    explanation: "O framework Cyber Kill Chain é ideal para analisar os estágios sequenciais de um ciberataque (reconhecimento, armamento, entrega, exploração, instalação, comando e controle, e ações nos objetivos), ajudando a entender a progressão da ameaça.\n\nO MITRE ATT&CK cataloga TTPs detalhados, mas a kill chain foca especificamente nos estágios sequenciais de progressão do ataque.\n\nO Diamond Model foca nas relações entre quatro vértices de intrusão, não na progressão linear por estágios.\n\nO OSSTMM é voltado para metodologias de testes de segurança e avaliação, não para o rastreio de estágios de ataques em tempo real.",
+  },
+
+  {
+    id: 187,
+    category: "Investigação de Intrusão",
+    question: "Um analista de segurança está investigando um incidente de intrusão em uma rede. O analista percebeu que o invasor está enviando sinais pequenos e periódicos para um servidor remoto. Qual técnica o invasor está usando para se comunicar com o servidor remoto?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Ataque Man-in-the-middle (MitM)", correct: false },
+      { letter: "B", text: "Beaconing", correct: true },
+      { letter: "C", text: "Cross-Site Request Forgery (CSRF)", correct: false },
+      { letter: "D", text: "Injeção de SQL", correct: false },
+    ],
+    explanation: "O beaconing é uma técnica em que um invasor envia sinais pequenos e periódicos para um servidor remoto para se comunicar com ele. Um ataque Man-in-the-middle (MitM) ocorre quando o invasor intercepta a comunicação; ele não é necessariamente usado para enviar sinais pequenos e periódicos. A injeção de SQL (Structured Query Language) ocorre quando um invasor injeta código malicioso em uma consulta SQL vulnerável para manipular um banco de dados, não sendo tipicamente usada para enviar sinais a um servidor remoto. Os ataques de Cross-Site Request Forgery (CSRF) manipulam as ações do usuário em uma aplicação web, mas não envolvem o envio de sinais pequenos e periódicos para um servidor remoto.",
+  },
+
+  {
+    id: 188,
+    category: "Gerenciamento de Memória",
+    question: "Um analista de segurança está investigando um problema em um servidor onde a utilização de memória está consistentemente alta. Qual é a causa mais provável do alto consumo de memória?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Espaço insuficiente no disco rígido", correct: false },
+      { letter: "B", text: "Vazamentos de memória (Memory leaks)", correct: true },
+      { letter: "C", text: "Desfragmentação de disco", correct: false },
+      { letter: "D", text: "Cache insuficiente", correct: false },
+    ],
+    explanation: "Os vazamentos de memória (memory leaks) ocorrem quando uma aplicação aloca memória mas não a libera quando ela não é mais necessária, causando alto consumo de memória ao longo do tempo. É a causa mais provável de alto consumo de memória. Espaço insuficiente no disco rígido pode causar lentidão no desempenho, mas tipicamente não é a causa de alto consumo de memória. A desfragmentação de disco é um processo que otimiza o armazenamento de arquivos em um disco rígido, e não a utilização de memória. Um cache insuficiente pode fazer com que o sistema operacional use mais memória para armazenar dados, mas tipicamente não é a causa de alto consumo de memória.",
+  },
+
+  {
+    id: 189,
+    category: "Segurança Interna",
+    question: "Um administrador de sistemas em uma instituição financeira está investigando um relato de alterações não autorizadas em um dos sistemas da organização, realizadas por meio do acesso à intranet da empresa. O administrador de sistemas revisou os logs do sistema e precisa determinar a causa mais provável das alterações. Qual das alternativas é a causa mais provável?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Insiders maliciosos", correct: true },
+      { letter: "B", text: "Sistemas mal configurados", correct: false },
+      { letter: "C", text: "Acesso remoto não seguro", correct: false },
+      { letter: "D", text: "Brechas de segurança física", correct: false },
+    ],
+    explanation: "Insiders maliciosos, como funcionários ou prestadores de serviços com acesso à rede, podem intencionalmente fazer alterações não autorizadas nos sistemas. Brechas de segurança física podem levar ao acesso não autorizado a sistemas, mas o cenário menciona alterações não autorizadas, e não acesso não autorizado. Sistemas mal configurados podem levar a vulnerabilidades de segurança que invasores podem explorar para fazer alterações não autorizadas; no entanto, não é a causa mais provável neste cenário em que as alterações já foram feitas. O acesso remoto não seguro pode levar ao acesso não autorizado a sistemas, mas o cenário menciona alterações não autorizadas, e não acesso não autorizado.",
+  },
+
+  {
+    id: 190,
+    category: "Capacidade de Disco",
+    question: "Um analista de segurança está conduzindo uma revisão de um servidor em uma grande organização. O analista percebeu que a capacidade de disco do servidor está quase cheia. Qual é a causa mais provável do alto consumo de capacidade de disco neste cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Corrupção de disco", correct: false },
+      { letter: "B", text: "Grandes conjuntos de dados", correct: true },
+      { letter: "C", text: "Fragmentação de disco", correct: false },
+      { letter: "D", text: "Cache insuficiente", correct: false },
+    ],
+    explanation: "Armazenar grandes conjuntos de dados pode consumir uma quantidade significativa de capacidade de disco, particularmente se os dados estiverem em vários locais ou se um usuário gerenciar e arquivar os dados de forma inadequada. Um cache insuficiente pode fazer com que o sistema operacional use mais espaço em disco para armazenar dados. A fragmentação de disco ocorre quando os arquivos estão em vários locais em um disco, fazendo com que o disco fique mais lento ou menos eficiente; no entanto, não é a causa mais provável de alto consumo de capacidade de disco. A corrupção de disco ocorre quando os dados no disco são corrompidos, fazendo com que o disco fique lento ou falhe; no entanto, não é a causa mais provável de alto consumo de capacidade de disco.",
+  },
+
+  {
+    id: 191,
+    category: "Largura de Banda",
+    question: "Uma organização está enfrentando problemas relacionados ao alto consumo de largura de banda, o que levou a congestionamento na rede e desempenho mais lento das aplicações. A organização precisa implementar uma combinação de ferramentas e técnicas para ajudar a identificar as causas do alto uso de largura de banda, monitorar o tráfego de rede e otimizar a utilização da largura de banda. Qual das seguintes opções seria eficaz para abordar esses problemas? (Selecione as três melhores opções.)",
+    multipleChoice: true,
+    selectCount: 3,
+    options: [
+      { letter: "A", text: "Compressão", correct: true },
+      { letter: "B", text: "Controle de acesso à rede (NAC)", correct: false },
+      { letter: "C", text: "Analisador de tráfego de rede", correct: true },
+      { letter: "D", text: "Qualidade de serviço (QoS)", correct: true },
+    ],
+    explanation: "Um analisador de tráfego de rede pode ajudar a identificar as causas do alto uso de largura de banda monitorando o tráfego de rede, capturando pacotes e fornecendo insights sobre quais dispositivos, aplicações ou usuários consomem mais largura de banda. Ao implementar a qualidade de serviço (QoS), uma organização pode garantir que aplicações e serviços críticos recebam largura de banda adequada, enquanto atribui menor prioridade ao tráfego menos importante. Essa abordagem ajuda a otimizar a utilização da largura de banda e a prevenir o congestionamento da rede. Técnicas de compressão de dados podem reduzir o tamanho dos dados transmitidos pela rede e, portanto, diminuir o consumo de largura de banda. O controle de acesso à rede (NAC) é uma solução de segurança que ajuda as organizações a aplicar políticas para controlar o acesso; a organização não usaria especificamente um NAC para resolver problemas de consumo de largura de banda.",
+  },
+
+  {
+    id: 192,
+    category: "Avaliação de Vulnerabilidades",
+    question: "A equipe de segurança de TI de uma empresa deve realizar uma avaliação de vulnerabilidades abrangente em sua infraestrutura de rede para identificar potenciais fraquezas de segurança e falhas de configuração. A equipe precisa de uma ferramenta para escanear vários sistemas, dispositivos e aplicações e fornecer relatórios detalhados com recomendações acionáveis. Qual ferramenta pode realizar esta tarefa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Splunk", correct: false },
+      { letter: "B", text: "Burp Suite", correct: false },
+      { letter: "C", text: "Snort", correct: false },
+      { letter: "D", text: "Nessus", correct: true },
+    ],
+    explanation: "O Nessus é uma ferramenta de escaneamento de vulnerabilidades que suporta a varredura de vários tipos de sistemas, dispositivos e aplicações. A equipe pode usar o Nessus para fornecer relatórios detalhados com recomendações acionáveis. O Burp Suite é uma ferramenta de teste de segurança de aplicações web focada em identificar vulnerabilidades e problemas de segurança em aplicações web; não é usado especificamente para avaliações de vulnerabilidade abrangentes em toda a infraestrutura de rede. O Splunk é uma poderosa plataforma de análise de dados e gerenciamento de logs que ajuda as organizações a obter insights de seus dados e monitorar sua infraestrutura, não sendo usado especificamente para avaliações de vulnerabilidade abrangentes. O Snort é um sistema de detecção e prevenção de intrusão (IDPS) de código aberto que monitora o tráfego de rede em busca de atividades maliciosas e potenciais ameaças de segurança, não sendo destinado a avaliações de vulnerabilidade abrangentes.",
+  },
+
+  {
+    id: 193,
+    category: "Análise de Tráfego",
+    question: "Um analista de segurança está monitorando o tráfego de rede de uma grande organização. O analista percebeu um pico incomum no tráfego de rede e precisa determinar a causa. Qual é a explicação mais provável para o pico incomum no tráfego de rede?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Problema de configuração de rede", correct: false },
+      { letter: "B", text: "Ataque de negação de serviço distribuída (DDoS)", correct: true },
+      { letter: "C", text: "Tráfego de segundo plano", correct: false },
+      { letter: "D", text: "Atividade de usuário redobrada", correct: false },
+    ],
+    explanation: "Um ataque de negação de serviço distribuída (DDoS) é um tipo de ataque cibernético que usa múltiplos dispositivos comprometidos para inundar uma rede-alvo com tráfego, causando uma negação de serviço. Um pico incomum no tráfego de rede pode indicar um ataque DDoS. Embora o tráfego de segundo plano possa contribuir para picos de tráfego na rede, é improvável que seja a única causa de um pico incomum. Embora um problema de configuração de rede possa causar um pico no tráfego de rede, é improvável que seja a causa única de um pico incomum. Embora a atividade acentuada do usuário possa contribuir para um pico de tráfego na rede, é improvável que seja a única causa de um pico incomum.",
+  },
+
+  {
+    id: 194,
+    category: "Varredura de Rede",
+    question: "Um administrador de rede está realizando uma varredura rápida de rede para identificar todos os dispositivos e serviços na rede da organização. O administrador não requer recursos extras, mas deve usar uma solução de código aberto. Qual das seguintes ferramentas seria a mais apropriada para o administrador de rede usar neste cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Wireshark", correct: false },
+      { letter: "B", text: "Traceroute", correct: false },
+      { letter: "C", text: "Angry IP Scanner", correct: true },
+      { letter: "D", text: "Nessus", correct: false },
+    ],
+    explanation: "O Angry IP Scanner é uma ferramenta popular de escaneamento e mapeamento de rede de código aberto. Ele pode escanear uma rede inteira ou um intervalo de endereços IP para identificar todos os dispositivos e serviços conectados. O Wireshark é uma ferramenta popular para análise de protocolos de rede e captura de pacotes; o administrador usaria o Wireshark para capturar e analisar o tráfego de rede, e não para escaneamento e mapeamento de rede. O Nessus é uma ferramenta comercial usada para escaneamento e avaliação de vulnerabilidades; o administrador usaria o Nessus para identificar vulnerabilidades em dispositivos e serviços conectados, e não para escaneamento e mapeamento de rede. O Traceroute é uma ferramenta usada para solução de problemas de rede; o administrador usaria o traceroute para rastrear a rota dos pacotes de rede da origem ao destino, e não para escaneamento e mapeamento.",
+  },
+
+  {
+    id: 195,
+    category: "Vazamento de Dados",
+    question: "Um analista de segurança em uma instituição financeira descobriu que dados confidenciais de clientes foram transferidos para fora da rede da organização. Qual das seguintes é a explicação mais provável para a transferência de dados?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Replicação de dados", correct: false },
+      { letter: "B", text: "Exfiltração de dados", correct: true },
+      { letter: "C", text: "Arquivamento de dados", correct: false },
+      { letter: "D", text: "Backup de dados", correct: false },
+    ],
+    explanation: "A exfiltração de dados refere-se à transferência não autorizada de dados confidenciais de uma rede segura para um local externo. Os backups de dados referem-se à criação de uma cópia para guarda caso os dados originais sejam perdidos ou danificados; os backups ocorrem dentro da rede da organização, e não fora dela. O arquivamento de dados refere-se a mover dados que não são usados ativamente para um local de armazenamento separado, tipicamente para retenção de longo prazo; o arquivamento ocorre dentro da rede da organização, e não fora dela. A replicação de dados refere-se à criação de múltiplas cópias de dados para fins de redundância, permitindo o acesso contínuo aos dados mesmo se uma cópia for perdida ou danificada; a replicação ocorre dentro da rede da organização, e não fora.",
+  },
+
+  {
+    id: 196,
+    category: "Inteligência de Ameaças",
+    question: "Um analista de inteligência de ameaças está conduzindo um reconhecimento de rede e precisa coletar informações sobre as relações entre várias entidades na rede de destino. Qual ferramenta o analista poderia usar para realizar esta tarefa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Wireshark", correct: false },
+      { letter: "B", text: "Tcpdump", correct: false },
+      { letter: "C", text: "Maltego", correct: true },
+      { letter: "D", text: "OpenVAS", correct: false },
+    ],
+    explanation: "O Maltego é uma ferramenta especificamente projetada para coleta de informações e visualização das relações entre várias entidades. Ele pode coletar informações sobre domínios, endereços IP e outras entidades de rede para ajudar a identificar potenciais alvos para um ataque cibernético. O Wireshark é uma ferramenta de análise de pacotes que analisa o tráfego de rede, não sendo específica para coleta de informações e mapeamento de relações. O OpenVAS é uma ferramenta de escaneamento de vulnerabilidades que pode identificar vulnerabilidades em sistemas em rede, não sendo específica para coleta de informações ou mapeamento de relações. O Tcpdump é uma ferramenta de captura de pacotes que pode capturar e analisar o tráfego de rede, não sendo específica para coleta de informações ou mapeamento de relações.",
+  },
+
+  {
+    id: 197,
+    category: "Detecção de Beacon",
+    question: "Uma organização implementou um sistema para detectar atividade de beacon analisando metadados sobre todas as sessões estabelecidas ou tentadas. No entanto, essa abordagem pode produzir muitos falsos positivos, já que muitas aplicações legítimas também usam beaconing. Quais são alguns indicadores para distinguir entre atividade de beacon suspeita e legítima, e por que é importante analisar cuidadosamente esse tipo de atividade para evitar falsos positivos?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Endpoints, tipos de dados transmitidos e número de sessões estabelecidas; para identificar atividade maliciosa e bloqueá-la", correct: false },
+      { letter: "B", text: "Taxa e timing das tentativas, strings de user agent e número de pacotes transmitidos; para rastrear o comportamento do usuário e identificar anomalias", correct: false },
+      { letter: "C", text: "Endpoints, taxa e timing das tentativas e tamanho dos pacotes de resposta; para distinguir a atividade suspeita", correct: true },
+      { letter: "D", text: "Tamanho dos pacotes de resposta, reputação do endereço IP de origem e localização geográfica; para monitorar o tráfego de rede e bloquear tráfego de regiões de alto risco", correct: false },
+    ],
+    explanation: "O beaconing identifica vários indicadores que ajudam a distinguir entre atividade de beacon suspeita e legítima, tais como endpoints, taxa e timing das tentativas e tamanho dos pacotes de resposta. A análise cuidadosa dessa atividade é crucial para evitar falsos positivos, que podem desperdiçar recursos e desviar a atenção de ameaças reais. Embora bloquear atividades maliciosas seja importante, não é o foco principal da detecção de atividade de beacon. Embora rastrear o comportamento do usuário e identificar anomalias sejam importantes, não é o foco principal da detecção de atividade de beacon. Monitorar o tráfego de rede usando o endereço IP e a localização geográfica pode ser útil, mas esses fatores podem não ser os indicadores mais relevantes para distinguir entre atividade de beacon suspeita e legítima.",
+  },
+
+  {
+    id: 198,
+    category: "Análise de Tráfego",
+    question: "Um analista de segurança monitora o tráfego de rede de um ambiente corporativo. O analista percebeu atividade em uma porta inesperada e precisa determinar a causa. Qual é a explicação mais provável para a atividade na porta inesperada?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Campanha de phishing", correct: false },
+      { letter: "B", text: "Ataque de negação de serviço distribuída (DDoS)", correct: false },
+      { letter: "C", text: "Infecção por malware", correct: true },
+      { letter: "D", text: "Software desatualizado", correct: false },
+    ],
+    explanation: "Uma infecção por malware pode causar atividade em portas inesperadas à medida que o malware se comunica com seu servidor de comando e controle, exfiltra dados ou realiza outras atividades maliciosas. Um ataque de negação de serviço distribuída (DDoS) é um tipo de ataque cibernético que inunda um alvo com tráfego, tornando-o indisponível; esse tipo de ataque tipicamente não causa atividade em portas inesperadas. Uma campanha de phishing é um tipo de ataque cibernético que usa engenharia social para enganar vítimas a divulgar informações confidenciais, não causando tipicamente atividade em portas inesperadas. Software desatualizado tipicamente não causa tráfego em portas inesperadas.",
+  },
+
+  {
+    id: 199,
+    category: "Avaliação de Vulnerabilidades",
+    question: "Um analista de segurança está conduzindo uma avaliação de vulnerabilidades para um cliente. A rede do cliente possui múltiplos sistemas operacionais e dispositivos, e o analista precisa determinar se há alguma fraqueza de segurança que um invasor possa explorar. O que o analista pode usar para identificar vulnerabilidades na rede e nos dispositivos do cliente?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Nmap", correct: false },
+      { letter: "B", text: "OpenVAS", correct: true },
+      { letter: "C", text: "Angry IP Scanner", correct: false },
+      { letter: "D", text: "Wireshark", correct: false },
+    ],
+    explanation: "A ferramenta OpenVAS é um scanner de vulnerabilidades de código aberto que pode identificar vulnerabilidades em múltiplos sistemas operacionais e dispositivos, tornando-a uma opção adequada para o analista de segurança. A ferramenta Angry IP Scanner é destinada ao escaneamento de rede e não é específica para identificar vulnerabilidades em uma rede. A ferramenta Wireshark é para análise de rede e não é específica para identificar vulnerabilidades em uma rede. A ferramenta Nmap é para exploração de rede e auditoria de segurança, mas não é tão abrangente quanto o OpenVAS para identificar vulnerabilidades em redes com múltiplos sistemas operacionais e dispositivos.",
+  },
+
+  {
+    id: 200,
+    category: "Comunicação P2P",
+    question: "Um administrador de rede detectou comunicação P2P irregular na rede. Qual poderia ser a causa possível dessa comunicação?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Infecção por malware ou atividade de botnet", correct: true },
+      { letter: "B", text: "Protocolos de autenticação fracos", correct: false },
+      { letter: "C", text: "Falha de hardware em dispositivos de rede", correct: false },
+      { letter: "D", text: "Falta de segmentação de rede", correct: false },
+    ],
+    explanation: "Malware ou botnets frequentemente empregam comunicação peer-to-peer (P2P) para fins de comando e controle. Portanto, comunicação incomum pode sinalizar a presença de atividade maliciosa, e o administrador de rede deve investigá-la mais a fundo. Falhas de hardware podem levar a interrupções na comunicação de rede, mas é improvável que causem especificamente comunicação peer-to-peer irregular. A segmentação de rede insuficiente pode resultar em congestionamento de rede e problemas de desempenho, mas não está diretamente relacionada à comunicação peer-to-peer irregular. Um agente de ameaças pode explorar protocolos de autenticação fracos para obter acesso não autorizado a uma rede, mas protocolos de autenticação fracos não causam diretamente comunicação peer-to-peer irregular.",
+  },
+
+  {
+    id: 201,
+    category: "Reconhecimento",
+    question: "Uma empresa contratou um analista de segurança para realizar uma fase abrangente de coleta de informações e reconhecimento em um projeto de teste de intrusão (penetration testing). O analista precisa usar uma ferramenta que possa automatizar a coleta de informações sobre um alvo e realizar reconhecimento na rede de destino. Qual das seguintes ferramentas é a mais adequada para esta tarefa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Metasploit", correct: false },
+      { letter: "B", text: "Snort", correct: false },
+      { letter: "C", text: "Recon-ng", correct: true },
+      { letter: "D", text: "Aircrack-ng", correct: false },
+    ],
+    explanation: "O Recon-ng automatiza o processo de reconhecimento e coleta de informações, tornando-o uma escolha ideal para o cenário fornecido. A ferramenta Aircrack-ng destina-se primariamente a avaliar a segurança de redes sem fio; embora seja uma ferramenta valiosa para seu propósito pretendido, ela não cobre a coleta de informações abrangente e o reconhecimento necessários no cenário fornecido. O Snort é uma ferramenta de sistema de detecção de intrusão (IDS) e sistema de prevenção de intrusão (IPS) de código aberto; embora seja valiosa para segurança de rede, ela não se especializa em coleta de informações e reconhecimento como o Recon-ng. Embora o Metasploit possa ser usado nos estágios posteriores de um engajamento de teste de intrusão, ele não é específico para a fase inicial de coleta de informações e reconhecimento.",
+  },
+
+  {
+    id: 202,
+    category: "Teste de Intrusão",
+    question: "Um analista de segurança de rede está realizando um projeto de teste de intrusão para um cliente. O analista precisa explorar vulnerabilidades na rede do cliente. Qual das seguintes ferramentas é mais comumente usada por profissionais de segurança para esse propósito?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Nessus", correct: false },
+      { letter: "B", text: "Metasploit", correct: true },
+      { letter: "C", text: "Angry IP Scanner", correct: false },
+      { letter: "D", text: "OpenVAS", correct: false },
+    ],
+    explanation: "O Metasploit é um framework amplamente utilizado para testes de intrusão e exploração de vulnerabilidades. Ele permite que profissionais de segurança testem a segurança de uma rede encontrando e explorando vulnerabilidades. O Nessus é uma ferramenta de escaneamento de vulnerabilidades que um analista pode usar para identificar potenciais vulnerabilidades em uma rede, e não para explorar vulnerabilidades. O OpenVAS é uma ferramenta de escaneamento de vulnerabilidades que um analista pode usar para identificar potenciais vulnerabilidades em uma rede, e não para explorar vulnerabilidades. O Angry IP Scanner é um simples scanner de endereços IP e portas, não sendo destinado à exploração de vulnerabilidades em uma rede.",
+  },
+
+  {
+    id: 203,
+    category: "Varredura de Portas",
+    question: "Um analista de segurança está conduzindo uma avaliação da segurança de rede de um pequeno escritório. O analista deve determinar se há dispositivos e serviços não autorizados na rede. Que tipo de varredura/varredura (sweep) indicaria ao analista de segurança que dispositivos e serviços não autorizados estão em execução na rede?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Varredura de portas (Port scan)", correct: true },
+      { letter: "B", text: "Varredura de ping (Ping sweep)", correct: false },
+      { letter: "C", text: "Varredura TCP (TCP sweep)", correct: false },
+      { letter: "D", text: "Varredura UDP (UDP sweep)", correct: false },
+    ],
+    explanation: "Ao determinar quais portas estão abertas usando uma varredura de portas (port scan), o analista de segurança pode determinar quais serviços ou aplicações estão em execução no dispositivo de destino e identificar quaisquer dispositivos ou serviços não autorizados que possam estar presentes na rede. Varreduras de ping (ping sweeps) podem fornecer informações valiosas sobre os dispositivos presentes em uma rede, mas não fornecem informações sobre os serviços ou aplicações em execução nos dispositivos de destino. Uma varredura de protocolo de controle de transmissão (TCP sweep) é uma varredura de rede usada para determinar quais portas TCP estão abertas em um dispositivo de destino. Uma varredura de protocolo de datagrama usuário (UDP sweep) é uma varredura de rede usada para determinar quais portas UDP estão abertas em um dispositivo de destino.",
+  },
+
+  {
+    id: 204,
+    category: "Descoberta de Rede",
+    question: "Um analista de segurança de rede conduz uma avaliação de segurança de rede para uma grande organização. O analista precisa escolher a ferramenta mais eficaz para identificar portas e serviços abertos na rede e determinar os sistemas operacionais e aplicações em execução nos dispositivos da rede. Qual das seguintes ferramentas é a melhor escolha para o analista?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "OpenVAS", correct: false },
+      { letter: "B", text: "Angry IP Scanner", correct: false },
+      { letter: "C", text: "Nmap", correct: true },
+      { letter: "D", text: "Nessus", correct: false },
+    ],
+    explanation: "O Nmap é uma ferramenta popular de código aberto para descoberta de rede, mapeamento e auditoria de segurança. Seus recursos incluem a capacidade de escanear um grande número de hosts, detectar sistemas operacionais e aplicações, e realizar avaliações de vulnerabilidade. O Nessus pode identificar vulnerabilidades em sistemas operacionais, aplicações e dispositivos de rede; no entanto, pode não ser tão eficiente ou eficaz quanto o Nmap para identificar portas e serviços abertos na rede. O Angry IP Scanner fornece informações básicas sobre portas e serviços abertos, mas pode não fornecer o mesmo nível de detalhe ou precisão que o Nmap. O OpenVAS é uma ferramenta poderosa para avaliação de vulnerabilidades, mas pode não ser tão eficiente ou eficaz quanto o Nmap para identificar portas e serviços abertos na rede.",
+  },
+
+  {
+    id: 205,
+    category: "Desempenho de Servidores",
+    question: "Um analista de segurança monitora o desempenho da infraestrutura de servidores de uma grande organização. O analista percebeu que um dos servidores apresenta uma quantidade incomum de consumo de CPU. Como o analista pode determinar a causa do alto consumo de CPU? (Selecione as três melhores opções.)",
+    multipleChoice: true,
+    selectCount: 3,
+    options: [
+      { letter: "A", text: "Revisar a configuração do firewall", correct: false },
+      { letter: "B", text: "Monitorar o volume de tráfego de rede", correct: true },
+      { letter: "C", text: "Escanear em busca de aplicações maliciosas", correct: true },
+      { letter: "D", text: "Monitorar processos em execução", correct: true },
+    ],
+    explanation: "Escanear em busca de aplicações maliciosas pode ajudar o analista a determinar se uma aplicação maliciosa está causando alto consumo de unidade central de processamento (CPU). Monitorar o volume de tráfego de rede pode ajudar o analista a determinar se o alto tráfego de rede está causando alto consumo de CPU. Alto tráfego de rede pode causar alto consumo de CPU se a infraestrutura do servidor não for capaz de lidar com o volume de tráfego. Monitorar processos em execução pode ajudar o analista a determinar se um processo específico está causando alto consumo de CPU. Uma configuração de firewall pode causar alto consumo de CPU se estiver incorreta; no entanto, outros fatores como malware, alto tráfego de rede ou aplicações que consomem muitos recursos são causas mais prováveis de alto consumo de CPU.",
+  },
+
+  {
+    id: 206,
+    category: "Segurança de Rede",
+    question: "Uma empresa experimentou recentemente uma degradação no desempenho da rede, caracterizada por velocidades lentas, quedas frequentes e interrupções. Um membro da equipe de TI suspeita que dispositivos não autorizados ou invasores (rogue devices) na rede possam estar contribuindo para esses problemas. Quais métodos são mais eficazes para identificar e impedir que dispositivos não autorizados acessem a rede? (Selecione as três melhores opções.)",
+    multipleChoice: true,
+    selectCount: 3,
+    options: [
+      { letter: "A", text: "Aproveitar o software de segurança de endpoint para monitorar e controlar o acesso a dispositivos em endpoints conhecidos.", correct: false },
+      { letter: "B", text: "Conduzir varreduras de rede usando ferramentas como o Nmap para identificar dispositivos ativos na rede.", correct: true },
+      { letter: "C", text: "Usar sistemas de detecção de intrusão (IDS) para monitorar o tráfego de rede e identificar dispositivos que não pertencem à rede.", correct: true },
+      { letter: "D", text: "Utilizar soluções de Controle de Acesso à Rede (NAC) para autenticar e validar dispositivos antes de conceder acesso à rede.", correct: true },
+    ],
+    explanation: "Varreduras de rede podem ajudar a identificar todos os dispositivos ativos na rede. Comparar os resultados com uma lista de dispositivos autorizados pode ajudar a identificar quaisquer dispositivos não autorizados ou invasores. Um IDS monitora o tráfego de rede em busca de atividades suspeitas; ele pode detectar dispositivos invasores que enviam ou recebem dados sem autorização, ajudando a identificar dispositivos potencialmente não autorizados. Soluções de NAC fornecem mecanismos para autenticar, autorizar e avaliar dispositivos antes que eles possam se conectar à rede, verificando se os dispositivos atendem a posturas de segurança específicas (como software antivírus atualizado ou versão específica do sistema operacional) antes de conceder acesso. O termo-chave aqui é 'endpoints conhecidos'; o software de segurança de endpoint é ótimo para garantir a segurança de dispositivos conhecidos, mas, por definição, dispositivos invasores são não autorizados e provavelmente não teriam esse software instalado.",
+  },
+
+  {
+    id: 207,
+    category: "Segurança em Nuvem AWS",
+    question: "A equipe de segurança de uma empresa precisa avaliar a postura de segurança do seu ambiente na Amazon Web Services (AWS), com foco nas fases de reconhecimento e exploração de um engajamento de teste de intrusão. A equipe precisa de uma ferramenta que possa automatizar vários cenários de ataque e validar a eficácia de seus controles de segurança em nuvem. Qual das seguintes ferramentas é mais adequada para esta tarefa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Zed Attack Proxy (ZAP)", correct: false },
+      { letter: "B", text: "Tenable.io", correct: false },
+      { letter: "C", text: "Pacu", correct: true },
+      { letter: "D", text: "Suricata", correct: false },
+    ],
+    explanation: "O Pacu é um framework de exploração de código aberto para a Amazon Web Services (AWS) voltado para testes de intrusão em ambientes AWS. Ele automatiza vários cenários de ataque e ajuda a validar a eficácia dos controles de segurança em nuvem. O Zed Attack Proxy (ZAP) é um scanner de segurança de aplicações web de código aberto. O Tenable.io é uma plataforma de gerenciamento de vulnerabilidades baseada em nuvem. O Suricata é um mecanismo de detecção de ameaças de rede de código aberto.",
+  },
+
+  {
+    id: 208,
+    category: "Escaneamento de Servidores Web",
+    question: "Um analista de segurança precisa realizar uma avaliação de segurança completa da infraestrutura web de um cliente. O cliente possui um grande número de servidores web, e o analista precisa identificar quaisquer vulnerabilidades que possam existir neles. Para realizar essa tarefa, o analista precisa de uma ferramenta capaz de escanear rapidamente vários servidores web e fornecer informações abrangentes sobre quaisquer vulnerabilidades detectadas. Dadas as seguintes opções, qual ferramenta melhor atende às necessidades do analista de segurança neste cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Metasploit", correct: false },
+      { letter: "B", text: "Nikto", correct: true },
+      { letter: "C", text: "Arachni", correct: false },
+      { letter: "D", text: "Burp Suite", correct: false },
+    ],
+    explanation: "O Nikto é um scanner de servidores web que o analista de segurança pode usar para identificar especificamente vulnerabilidades em servidores web. Ele pode escanear rapidamente vários servidores web e fornecer informações abrangentes sobre as vulnerabilidades detectadas.",
+  },
+
+  {
+    id: 209,
+    category: "Segurança de Aplicações Web",
+    question: "Uma empresa de desenvolvimento de software lançou um novo site de comércio eletrônico para seu cliente. O cliente expressou preocupações sobre a segurança do site e pediu à equipe de desenvolvimento que garanta que o site esteja seguro contra quaisquer ameaças potenciais. A equipe de desenvolvimento decidiu realizar uma avaliação de segurança de aplicação web para resolver essas preocupações. Qual das seguintes ferramentas melhor se adapta a esta tarefa, considerando sua capacidade de identificar vulnerabilidades de segurança, suportar testes automatizados e estender a funcionalidade por meio da instalação de complementos (add-ons)?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Zed Attack Proxy (ZAP)", correct: true },
+      { letter: "B", text: "Aircrack-ng", correct: false },
+      { letter: "C", text: "Nikto", correct: false },
+      { letter: "D", text: "Maltego", correct: false },
+    ],
+    explanation: "O ZAP (Zed Attack Proxy) é uma ferramenta popular de teste de aplicações web de código aberto. Ele possui recursos para suporte a escaneamento automatizado, manipulação de entradas e testes de API, além de uma arquitetura de plugins que permite estender suas capacidades.",
+  },
+
+  {
+    id: 210,
+    category: "Recursos do ZAP",
+    question: "Um desenvolvedor de aplicações web deseja testar a segurança de uma aplicação antes de implantá-la em produção. Qual das seguintes opções é um recurso do Zed Attack Proxy (ZAP) que influenciaria a decisão do desenvolvedor de aplicações web?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "O ZAP pode gerar automaticamente um relatório de todas as vulnerabilidades encontradas na aplicação.", correct: true },
+      { letter: "B", text: "Apenas aplicações web desenvolvidas em Java podem usar o ZAP.", correct: false },
+      { letter: "C", text: "O ZAP pode corrigir automaticamente quaisquer vulnerabilidades encontradas na aplicação.", correct: false },
+      { letter: "D", text: "Apenas aplicações web desenvolvidas usando .NET podem usar o ZAP.", correct: false },
+    ],
+    explanation: "O Zed Attack Proxy (ZAP) é um scanner de aplicações web amplamente utilizado, capaz de identificar automaticamente vulnerabilidades e gerar um relatório abrangente de todas as falhas detectadas. Ele não corrige vulnerabilidades automaticamente nem se restringe a Java ou .NET.",
+  },
+
+  {
+    id: 211,
+    category: "Avaliação de Segurança Web",
+    question: "Um analista de segurança está realizando uma avaliação de segurança de aplicação web para um cliente para determinar se existem vulnerabilidades na aplicação web e fornecer recomendações para remediação. Qual ferramenta é mais adequada para esta tarefa, considerando sua capacidade de identificar vulnerabilidades de segurança e criar e compartilhar scripts e plugins personalizados?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Aircrack-ng", correct: false },
+      { letter: "B", text: "Burp Suite Community Edition", correct: false },
+      { letter: "C", text: "Zed Attack Proxy (ZAP)", correct: true },
+      { letter: "D", text: "Metasploit", correct: false },
+    ],
+    explanation: "O Zed Attack Proxy (ZAP) é uma ferramenta gratuita de teste de segurança de aplicações web de código aberto. Ele identifica vulnerabilidades de segurança e suporta a criação e compartilhamento de scripts e plugins personalizados.",
+  },
+
+  {
+    id: 212,
+    category: "Auditoria Multi-Cloud",
+    question: "Uma equipe de segurança em nuvem está procurando uma ferramenta de auditoria de segurança multi-cloud que possa avaliar a postura de segurança de seus ambientes na Amazon Web Services (AWS), Azure e Google Cloud Platform (GCP). A equipe de segurança em nuvem precisa de uma ferramenta que possa fornecer uma visão clara e concisa de potenciais riscos de segurança e configurações incorretas. Qual das seguintes ferramentas é mais adequada para esta tarefa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "ScoutSuite", correct: true },
+      { letter: "B", text: "Wazuh", correct: false },
+      { letter: "C", text: "Aircrack-ng", correct: false },
+      { letter: "D", text: "Nikto", correct: false },
+    ],
+    explanation: "O ScoutSuite é uma ferramenta de auditoria de segurança multi-cloud de código aberto que suporta ambientes AWS, Azure e GCP, avaliando a postura de segurança e fornecendo uma visão concisa de riscos e configurações incorretas.",
+  },
+
+  {
+    id: 213,
+    category: "Teste de Segurança em Aplicações Web",
+    question: "Uma empresa de desenvolvimento de software está construindo uma aplicação web personalizada para um cliente que processará informações financeiras confidenciais. O cliente especificou que um desenvolvedor de software deve testar exaustivamente a aplicação em busca de vulnerabilidades de segurança antes de ela entrar em produção. A empresa tem várias opções de teste de segurança, mas deseja usar a ferramenta que fornecerá os resultados mais abrangentes. Qual ferramenta a empresa deve usar neste caso?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Metasploit", correct: false },
+      { letter: "B", text: "Burp Suite", correct: true },
+      { letter: "C", text: "Nmap", correct: false },
+      { letter: "D", text: "Nessus", correct: false },
+    ],
+    explanation: "O Burp Suite é uma ferramenta de teste de segurança de aplicações web que fornece recursos abrangentes para identificar e mitigar vulnerabilidades de segurança, sendo a mais apropriada para este cenário.",
+  },
+
+  {
+    id: 214,
+    category: "Depuração de Código em Linux",
+    question: "Um desenvolvedor de software está trabalhando em uma aplicação baseada em Linux e encontra um problema inesperado na execução do código. O desenvolvedor precisa de uma ferramenta que o ajude a examinar e depurar a aplicação, permitindo inspecionar o estado de execução e modificar o fluxo de execução do programa. Qual das seguintes ferramentas é mais adequada para esta tarefa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "GNU Debugger", correct: true },
+      { letter: "B", text: "Wireshark", correct: false },
+      { letter: "C", text: "Tcpdump", correct: false },
+      { letter: "D", text: "Cuckoo", correct: false },
+    ],
+    explanation: "O GNU Debugger (GDB) é uma ferramenta de depuração amplamente utilizada para aplicações baseadas em Linux, permitindo inspecionar o estado de execução e modificar o fluxo de execução.",
+  },
+
+  {
+    id: 215,
+    category: "Recursos do Burp Suite",
+    question: "Um analista de segurança deseja usar um scanner de aplicação web para testar a segurança de uma aplicação web. Qual das seguintes opções é um recurso do Burp Suite que pode atender aos requisitos do analista de segurança?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Avaliar a segurança do sistema operacional subjacente", correct: false },
+      { letter: "B", text: "Detectar malwares e vírus no servidor web", correct: false },
+      { letter: "C", text: "Interceptar e modificar requisições e respostas HTTP", correct: true },
+      { letter: "D", text: "Testar vulnerabilidades no código-fonte da aplicação", correct: false },
+    ],
+    explanation: "Interceptar e modificar requisições e respostas HTTP é um recurso fundamental do Burp Suite, permitindo que o analista examine e manipule a comunicação entre a aplicação web e o cliente.",
+  },
+
+  {
+    id: 216,
+    category: "Auditoria de Conformidade em Nuvem",
+    question: "Uma empresa deseja avaliar a postura de segurança de sua infraestrutura na Amazon Web Services (AWS) para garantir que ela adira às melhores práticas do setor e aos padrões de conformidade. Qual ferramenta a empresa pode usar para automatizar o processo de auditoria e gerar relatórios para seu ambiente em nuvem?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Prowler", correct: true },
+      { letter: "B", text: "Burp Suite", correct: false },
+      { letter: "C", text: "Nmap", correct: false },
+      { letter: "D", text: "Nessus", correct: false },
+    ],
+    explanation: "O Prowler é uma ferramenta de segurança de código aberto que ajuda as organizações a avaliar sua infraestrutura na Amazon Web Services (AWS) e garantir a conformidade com as melhores práticas do setor.",
+  },
+
+  {
+    id: 217,
+    category: "Formatos de intercâmbio de dados",
+    question: "Uma equipe de desenvolvedores de software em uma grande corporação precisa trocar dados entre múltiplos sistemas. O formato de intercâmbio de dados deve suportar estruturas de dados muito complexas e profundamente aninhadas, fornecer amplo suporte a namespaces para evitar conflitos de nomes e incluir um recurso para definir linguagens de marcação personalizadas. Qual dos seguintes formatos de intercâmbio de dados seria o mais apropriado para os desenvolvedores usarem neste cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Valores Separados por Vírgula (CSV)", correct: false },
+      { letter: "B", text: "eXtensible Markup Language (XML)", correct: true },
+      { letter: "C", text: "Yet Another Markup Language (YAML)", correct: false },
+      { letter: "D", text: "JavaScript Object Notation (JSON)", correct: false },
+    ],
+    explanation: "XML lida muito bem com estruturas profundamente aninhadas, oferece amplo suporte a namespaces e permite definir linguagens de marcação personalizadas, tornando-o ideal neste cenário. JSON é simples e eficiente, mas pode ter dificuldades com estruturas muito complexas em comparação ao XML. CSV é limitado para estruturas complexas. YAML é mais legível por humanos e não é o foco para esse uso.",
+  },
+
+  {
+    id: 218,
+    category: "Indicadores de malware",
+    question: "Um analista de cibersegurança está investigando um processo suspeito em execução em um servidor e descobre saída inesperada e anomalias no registro. Ao analisar essas constatações, quais duas considerações o analista deve priorizar para determinar a natureza do problema? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Saída inesperada pode indicar atividade de malware.", correct: true },
+      { letter: "B", text: "Anomalias no registro podem ser indicativas de uma intrusão de malware.", correct: true },
+      { letter: "C", text: "Anomalias no registro podem ser causadas por atualizações legítimas de software.", correct: false },
+      { letter: "D", text: "Saída inesperada pode ser resultado de sintaxe de comando incorreta.", correct: false },
+    ],
+    explanation: "Malware pode alterar o comportamento do sistema, gerando saídas inesperadas, e modificar o registro para persistência e execução na inicialização. Embora erros humanos e atualizações possam explicar alguns sinais, diante de um processo suspeito devem ser tratados como potenciais indicadores de ameaça.",
+  },
+
+  {
+    id: 219,
+    category: "Expressões regulares",
+    question: "Um analista de cibersegurança está investigando um incidente de segurança e precisa buscar padrões específicos em grandes volumes de dados de log. Qual ferramenta ou técnica de programação é mais comumente usada para identificar padrões em dados de texto e seria útil ao analista neste cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Python", correct: false },
+      { letter: "B", text: "Shell script", correct: false },
+      { letter: "C", text: "JavaScript", correct: false },
+      { letter: "D", text: "Expressões regulares", correct: true },
+    ],
+    explanation: "Expressões regulares definem e buscam padrões em texto de forma poderosa, sendo a escolha mais apropriada. Python, shell scripts e JavaScript podem manipular texto, mas não são a ferramenta mais típica especificamente para esse fim.",
+  },
+
+  {
+    id: 220,
+    category: "Análise de logs de aplicação",
+    question: "Um analista de segurança recebe um alerta do IDS da organização sobre saída inesperada de uma aplicação crítica. O analista suspeita de comprometimento da aplicação. O que deve priorizar ao investigar para determinar a causa da saída inesperada?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Revisar os logs da aplicação em busca de anomalias", correct: true },
+      { letter: "B", text: "Investigar mudanças recentes nas regras do firewall", correct: false },
+      { letter: "C", text: "Analisar o tráfego de rede em busca de padrões incomuns", correct: false },
+      { letter: "D", text: "Verificar criação não autorizada de contas de usuário", correct: false },
+    ],
+    explanation: "Logs da aplicação detalham o comportamento interno e podem revelar evidências de comprometimento ou má configuração. Tráfego de rede, contas e firewall são menos diretos para a causa da saída gerada pela própria aplicação.",
+  },
+
+  {
+    id: 221,
+    category: "Detecção de texto ofuscado",
+    question: "Um analista de segurança está desenvolvendo um script em Python para analisar texto simples de arquivos de log. O script identificará possíveis incidentes de segurança e gerará alertas para investigação. Qual dos seguintes conceitos de segurança o analista precisa implementar no script para detectar texto ofuscado? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Inspeção de cabeçalho", correct: false },
+      { letter: "B", text: "Expressão regular", correct: true },
+      { letter: "C", text: "Manipulação de strings", correct: true },
+      { letter: "D", text: "Verificação de assinatura de código", correct: false },
+    ],
+    explanation: "Expressões regulares ajudam a detectar padrões produzidos por técnicas de ofuscação. Manipulação de strings permite transformar e decodificar para desofuscar. Assinatura de código e inspeção de cabeçalho não são técnicas primárias para texto de logs.",
+  },
+
+  {
+    id: 222,
+    category: "JSON vs XML",
+    question: "Um analista de segurança está roteirizando um processo para coletar dados de log de múltiplas fontes na rede. Precisa escolher entre JSON ou XML como formato para o script. Por que escolher JSON em vez de XML nesse processo?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "XML pode fazer parsing de dados mais rapidamente que JSON.", correct: false },
+      { letter: "B", text: "XML está desatualizado e não é mais suportado.", correct: false },
+      { letter: "C", text: "JSON é mais seguro que XML.", correct: false },
+      { letter: "D", text: "JSON permite processamento mais rápido de grandes conjuntos de dados.", correct: true },
+    ],
+    explanation: "JSON costuma ser mais leve e parseado mais rapidamente que XML, acelerando o processamento de grandes volumes. A segurança depende da implementação, e XML continua amplamente suportado.",
+  },
+
+  {
+    id: 223,
+    category: "Contas privilegiadas",
+    question: "Um analista de segurança recebe um alerta do SIEM. Ao revisar os logs, nota um aumento em ações de alto privilégio na rede. O que deve priorizar ao investigar para identificar a possível causa subjacente?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Revisar logs de aplicação em busca de comportamento inesperado", correct: false },
+      { letter: "B", text: "Analisar novas contas de usuário", correct: true },
+      { letter: "C", text: "Examinar alterações e modificações recentes em arquivos", correct: false },
+      { letter: "D", text: "Investigar padrões de tráfego de rede incomuns", correct: false },
+    ],
+    explanation: "Novas contas com privilégios elevados podem explicar o aumento de ações privilegiadas. As demais opções não abordam diretamente a origem desse aumento.",
+  },
+
+  {
+    id: 224,
+    category: "PowerShell vs shell script",
+    question: "Um analista precisa automatizar tarefas eficientemente em um ambiente misto com sistemas Windows e Unix. Considerando a ampla aplicabilidade de ferramentas de script entre plataformas, qual afirmação destaca com precisão distinções críticas entre PowerShell e shell scripts ao desenvolver automações?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Shell scripts servem para automatizar tarefas em sistemas Unix, ao contrário do PowerShell, que é exclusivo do Windows.", correct: false },
+      { letter: "B", text: "PowerShell e shell scripts, embora usados em sistemas operacionais diferentes, agora podem rodar tanto em Windows quanto em Unix.", correct: false },
+      { letter: "C", text: "Ambos são usados para automação, mas diferem na sintaxe e não são intercambiáveis.", correct: true },
+      { letter: "D", text: "PowerShell, originalmente para Windows, agora também suporta sistemas Unix, enquanto shell scripts são usados principalmente em ambientes Unix.", correct: false },
+    ],
+    explanation: "Embora ambos sirvam à automação, suas sintaxes e convenções diferem e não são diretamente intercambiáveis, o que é crucial em ambientes mistos.",
+  },
+
+  {
+    id: 225,
+    category: "Investigação em Linux",
+    question: "Um analista de segurança examina atividade suspeita em um servidor Linux da organização. Ele encontra um arquivo contendo um script ofuscado que usa comandos em nível de sistema. Qual técnica deve usar para investigar de forma eficiente possíveis atividades maliciosas relacionadas a esse incidente no sistema afetado?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Analisar logs de shell scripts", correct: true },
+      { letter: "B", text: "Inspecionar o histórico de execução de scripts PowerShell", correct: false },
+      { letter: "C", text: "Examinar o histórico de execução de scripts Python", correct: false },
+      { letter: "D", text: "Revisar a saída de scripts JavaScript", correct: false },
+    ],
+    explanation: "Em um servidor Linux com script usando comandos de sistema, a análise de logs de shell scripts é a mais efetiva. PowerShell é típico de Windows; Python e JavaScript não costumam usar tais comandos nesse contexto.",
+  },
+
+  {
+    id: 226,
+    category: "Automação com Bash e Nmap",
+    question: "Um analista de segurança conduz um teste de penetração com Nmap para avaliar a postura de segurança da rede da organização. Precisa automatizar em um servidor Linux a descoberta de portas abertas em múltiplos hosts, coletar mais informações sobre os serviços e salvar os resultados, evitando instalar software adicional. Qual técnica de script deve usar para isso de forma eficiente?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "PowerShell", correct: false },
+      { letter: "B", text: "Bash", correct: true },
+      { letter: "C", text: "JavaScript", correct: false },
+      { letter: "D", text: "Python", correct: false },
+    ],
+    explanation: "Bash é o shell e linguagem de script padrão na maioria dos Linux e integra-se bem a ferramentas de linha de comando como o Nmap, sem necessidade de software extra.",
+  },
+
+  {
+    id: 227,
+    category: "Linguagens para machine learning",
+    question: "Uma empresa de desenvolvimento está criando uma aplicação sob medida que coletará e analisará quantidades moderadas de dados para identificar padrões e fazer previsões. O cliente exige uma linguagem de script com muitas bibliotecas e ferramentas de machine learning. Qual linguagem o desenvolvedor deve usar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Python", correct: true },
+      { letter: "B", text: "Java", correct: false },
+      { letter: "C", text: "C++", correct: false },
+      { letter: "D", text: "JavaScript", correct: false },
+    ],
+    explanation: "Python possui um ecossistema vasto e consolidado para machine learning, com bibliotecas para análise de dados, visualização e modelagem.",
+  },
+
+  {
+    id: 228,
+    category: "Logs de aplicação",
+    question: "Uma empresa atualizou recentemente para a versão mais recente da aplicação web. Ao revisar os logs, o analista nota uma alteração não autorizada feita por um usuário desconhecido. Quais logs provavelmente trarão informações sobre essa alteração não autorizada?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Log do sistema", correct: false },
+      { letter: "B", text: "Log de eventos", correct: false },
+      { letter: "C", text: "Log de segurança", correct: false },
+      { letter: "D", text: "Log da aplicação", correct: true },
+    ],
+    explanation: "O log da aplicação registra funções e operações internas, incluindo alterações (inclusive não autorizadas). Os demais focam eventos do sistema, segurança ou programas, não mudanças específicas da aplicação.",
+  },
+
+  {
+    id: 229,
+    category: "Atividade maliciosa em aplicações",
+    question: "Uma organização vem sofrendo uma série de incidentes de segurança, e um analista está investigando. Ele precisa identificar com eficiência indicadores de atividade potencialmente maliciosa nas aplicações afetadas. Em que deve focar para analisar e identificar efetivamente essa atividade no ambiente de aplicação?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Conduzir uma varredura completa de vulnerabilidades na rede", correct: false },
+      { letter: "B", text: "Revisar logs da aplicação em busca de padrões ou anomalias incomuns", correct: true },
+      { letter: "C", text: "Realizar um teste de penetração abrangente", correct: false },
+      { letter: "D", text: "Implementar políticas rígidas de controle de acesso à rede", correct: false },
+    ],
+    explanation: "Revisar logs da aplicação por padrões incomuns é o método mais eficaz para encontrar indicadores de atividade maliciosa nas próprias aplicações.",
+  },
+
+  {
+    id: 230,
+    category: "Intercâmbio de dados web (JSON)",
+    question: "Um desenvolvedor precisa de um formato para serializar e transmitir dados entre uma aplicação web e um servidor. O formato deve ser leve, facilmente parseável por navegadores e eficiente para requisições frequentes. Qual formato de intercâmbio de dados deve usar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "JavaScript Object Notation (JSON)", correct: true },
+      { letter: "B", text: "Valores Separados por Vírgula (CSV)", correct: false },
+      { letter: "C", text: "Yet Another Markup Language (YAML)", correct: false },
+      { letter: "D", text: "eXtensible Markup Language (XML)", correct: false },
+    ],
+    explanation: "JSON é leve, fácil de parsear em ambientes JavaScript e eficiente para comunicação cliente-servidor, especialmente em aplicações AJAX. XML é mais verboso; YAML é voltado a legibilidade; CSV é tabular e limitado para estruturas hierárquicas.",
+  },
+
+  {
+    id: 231,
+    category: "Logs do PowerShell",
+    question: "Um analista de segurança descobre que uma nova tarefa agendada executa regularmente um script desconhecido. A investigação mostra que o script inclui cmdlets específicos de uma certa linguagem de script. Qual é a forma mais eficiente de identificar atividade potencialmente maliciosa relacionada a esse incidente no sistema afetado?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Investigar dependências de scripts Ruby", correct: false },
+      { letter: "B", text: "Revisar a saída de scripts JavaScript", correct: false },
+      { letter: "C", text: "Analisar logs do PowerShell", correct: true },
+      { letter: "D", text: "Examinar o histórico de execução de scripts Python", correct: false },
+    ],
+    explanation: "Cmdlets são característicos do PowerShell; portanto, analisar seus logs é a melhor forma de identificar possíveis atividades maliciosas associadas.",
+  },
+
+  {
+    id: 232,
+    category: "Automação de varreduras (Nmap)",
+    question: "Um analista precisa usar o Nmap para identificar estações de trabalho com um serviço específico em execução na porta 8080. Que tipo de script é melhor para automatizar essa tarefa?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "CSIRT", correct: false },
+      { letter: "B", text: "Shell script", correct: true },
+      { letter: "C", text: "APT", correct: false },
+      { letter: "D", text: "XML", correct: false },
+    ],
+    explanation: "Shell scripts são ideais para automatizar tarefas como executar varreduras Nmap, revisar logs e orquestrar etapas complexas. XML, APT e CSIRT não são linguagens de script para esse fim.",
+  },
+
+  {
+    id: 233,
+    category: "Análise de interrupção de serviço",
+    question: "Um analista observa uma interrupção de serviço afetando uma aplicação crítica e suspeita de atividade maliciosa. O que deve priorizar ao investigar para determinar a causa da interrupção?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Executar um teste de penetração na aplicação", correct: false },
+      { letter: "B", text: "Examinar logs do servidor em busca de atividade incomum", correct: true },
+      { letter: "C", text: "Revisar mudanças recentes nas regras do firewall", correct: false },
+      { letter: "D", text: "Analisar logs de criação de contas de usuário", correct: false },
+    ],
+    explanation: "Logs do servidor podem revelar eventos e erros que levaram à interrupção. Teste de penetração e outras revisões não focam no incidente em andamento.",
+  },
+
+  {
+    id: 234,
+    category: "Governança de contas e privilégios",
+    question: "Um analista descobre que privilégios não autorizados foram concedidos a uma nova conta criada com acesso de alto nível, sem aprovação da equipe de segurança. Qual é a forma mais eficaz de evitar a introdução de novas contas com privilégios não autorizados no ambiente da organização?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Bloquear acesso à rede da organização de fontes externas para evitar ataques e violações de dados", correct: false },
+      { letter: "B", text: "Implementar um firewall para monitorar todo o tráfego de rede de entrada e saída em busca de atividade suspeita", correct: false },
+      { letter: "C", text: "Implementar controles rígidos sobre a criação de contas e atribuição de privilégios", correct: true },
+      { letter: "D", text: "Usar senhas fortes e aplicar políticas de senha para impedir acesso não autorizado a contas de usuário", correct: false },
+    ],
+    explanation: "Controles rigorosos na criação de contas e atribuição de privilégios garantem que apenas pessoal autorizado crie contas e que as permissões sejam revisadas e aprovadas, prevenindo privilégios indevidos.",
+  },
+
+  {
+    id: 235,
+    category: "Automação no Windows (PowerShell)",
+    question: "Um analista de cibersegurança investiga um incidente e suspeita que um atacante usa uma linguagem de programação específica para executar comandos em um sistema alvo rodando em ambiente Windows. Qual linguagem é mais comumente associada a scripts e automação nesse contexto?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "JavaScript", correct: false },
+      { letter: "B", text: "Python", correct: false },
+      { letter: "C", text: "Bash", correct: false },
+      { letter: "D", text: "PowerShell", correct: true },
+    ],
+    explanation: "PowerShell é o shell de linha de comando e linguagem de script projetada especificamente para ambientes Windows, sendo a escolha padrão para automação e tarefas nesse SO.",
+  },
+
+  {
+    id: 236,
+    category: "Atividade anômala",
+    question: "Um analista de segurança monitora a rede de uma empresa em busca de potenciais ameaças e nota comportamento anormal em uma aplicação crítica para os negócios. Que tipo de atividade o analista provavelmente está observando?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Atividade anômala", correct: true },
+      { letter: "B", text: "Atividade autorizada", correct: false },
+      { letter: "C", text: "Falso positivo", correct: false },
+      { letter: "D", text: "Manutenção de rotina", correct: false },
+    ],
+    explanation: "Atividade anômala refere-se a qualquer ação que desvia do comportamento normal de uma aplicação ou sistema, o que se alinha perfeitamente ao comportamento inesperado observado na aplicação crítica.",
+  },
+
+  {
+    id: 237,
+    category: "Vulnerabilidades de Memória",
+    question: "Uma plataforma de comércio eletrônico identificou uma vulnerabilidade de estouro de pilha em uma de suas aplicações críticas. A organização designou um analista de segurança para sugerir controles eficazes para mitigar o risco associado a essa vulnerabilidade. Considerando a natureza da vulnerabilidade, qual controle o analista deve recomendar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Implementar validação e sanitização de entrada", correct: false },
+      { letter: "B", text: "Empregar Address Space Layout Randomization (ASLR)", correct: true },
+      { letter: "C", text: "Aplicar Content Security Policy (CSP)", correct: false },
+      { letter: "D", text: "Habilitar flags seguras para cookies", correct: false },
+    ],
+    explanation: "ASLR é uma técnica de segurança que randomiza os endereços de memória onde o sistema carrega o código e dados da aplicação. Essa randomização dificulta a exploração de vulnerabilidades de estouro de pilha. Embora validação e sanitização de entrada sejam essenciais para prevenir vários ataques, como injeções, não são os controles mais eficazes para mitigar estouros de pilha. Flags seguras para cookies aumentam a segurança dos cookies transmitidos, mas não tratam diretamente estouros de pilha. CSP ajuda a prevenir XSS e outras injeções de código, mas não foca em estouros de pilha.",
+  },
+
+  {
+    id: 238,
+    category: "Vulnerabilidades Web",
+    question: "Um auditor de segurança descobriu uma vulnerabilidade em uma aplicação web que permite a um atacante induzir um usuário autenticado a realizar ações indesejadas na aplicação sem o seu conhecimento. Qual das seguintes vulnerabilidades web melhor descreve este cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Cross-Site Scripting (XSS)", correct: false },
+      { letter: "B", text: "Server-Side Request Forgery (SSRF)", correct: false },
+      { letter: "C", text: "Directory Traversal", correct: false },
+      { letter: "D", text: "Cross-Site Request Forgery (CSRF)", correct: true },
+    ],
+    explanation: "Cross-Site Request Forgery (CSRF) é uma vulnerabilidade web que permite a um atacante induzir usuários autenticados a realizar ações indesejadas em uma aplicação web sem o conhecimento deles. Cross-Site Scripting (XSS) é um tipo de vulnerabilidade que permite injetar scripts maliciosos em páginas web vistas por outros usuários. SSRF permite requisitar recursos internos ou externos em nome do servidor web. Directory Traversal permite acessar diretórios e arquivos restritos.",
+  },
+
+  {
+    id: 239,
+    category: "Segurança em Aplicações Web",
+    question: "Uma empresa de comércio eletrônico sofreu recentemente uma violação de dados, e uma auditoria de segurança revelou várias vulnerabilidades em sua aplicação web. A empresa deseja melhorar a segurança da aplicação web seguindo as melhores práticas de codificação segura e aprimorando o gerenciamento de sessões. Qual das seguintes ações a empresa deve tomar para alcançar isso?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Utilizar tempos limite de sessão curtos", correct: true },
+      { letter: "B", text: "Utilizar credenciais codificadas no código (hard-coded)", correct: false },
+      { letter: "C", text: "Desabilitar a validação de entrada", correct: false },
+      { letter: "D", text: "Empregar HTTPS para todas as transmissões de dados", correct: false },
+    ],
+    explanation: "Usar tempos limite de sessão curtos é uma boa prática de codificação segura para gerenciamento de sessões. Tempos limite curtos ajudam a prevenir o acesso não autorizado à sessão de um usuário, reduzindo a janela de oportunidade para um atacante sequestrar a sessão. Embora o uso de HTTPS seja uma boa prática, ele não se relaciona diretamente com as melhores práticas de codificação segura ou gerenciamento de sessões. Credenciais hard-coded são facilmente descobertas e exploradas. A validação de entrada é essencial para prevenir ataques.",
+  },
+
+  {
+    id: 240,
+    category: "Controles de Mitigação de Ataques",
+    question: "Preparando-se para um novo projeto de testes de redução de ataques, um testador de penetração revisa a lista de verificação da empresa para mitigação de ataques em aplicações. Qual controle da lista de verificação foca em garantir que os usuários tenham apenas o nível de acesso necessário exigido para sua função?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Execução remota de código", correct: false },
+      { letter: "B", text: "Fim de vida útil (End-of-life)", correct: false },
+      { letter: "C", text: "Escalação de privilégios", correct: true },
+      { letter: "D", text: "Falha de identificação", correct: false },
+    ],
+    explanation: "Para este cenário, os controles de escalação de privilégios são os mais aplicáveis, pois implementam o princípio do privilégio mínimo e controles de acesso. Isso elimina a capacidade dos usuários de buscar áreas da rede nas quais não têm necessidade de negócios justificada para visualização.",
+  },
+
+  {
+    id: 241,
+    category: "Cross-Site Scripting (XSS)",
+    question: "Um site de comércio eletrônico foi identificado como suscetível a ataques de cross-site scripting (XSS) refletido em sua funcionalidade de busca. A equipe de segurança tem a tarefa de recomendar controles para mitigar essa vulnerabilidade específica. Qual das seguintes recomendações é MAIS apropriada para abordar a vulnerabilidade?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Criptografar dados sensíveis armazenados no banco de dados", correct: false },
+      { letter: "B", text: "Restringir o acesso ao código-fonte da aplicação", correct: false },
+      { letter: "C", text: "Implementar validação de entrada e codificação de saída", correct: true },
+      { letter: "D", text: "Aumentar a duração do tempo limite da sessão", correct: false },
+    ],
+    explanation: "Vulnerabilidades de XSS refletido ocorrem quando a entrada do usuário é incorporada diretamente em uma página web sem validação ou codificação adequada. Implementar validação de entrada ajuda a garantir que a entrada atenda aos critérios esperados, enquanto a codificação de saída impede que caracteres especiais sejam interpretados como código pelo navegador do usuário.",
+  },
+
+  {
+    id: 242,
+    category: "Mitigação de XSS",
+    question: "Um administrador web é responsável pela segurança de uma aplicação web. O administrador deseja prevenir ataques de cross-site scripting (XSS) onde a entrada do usuário é refletida de volta e executada como parte do conteúdo da página web. Qual das seguintes melhores práticas o administrador deve usar para alcançar esse objetivo?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Políticas de senha forte", correct: false },
+      { letter: "B", text: "Consultas parametrizadas (Parameterized queries)", correct: false },
+      { letter: "C", text: "Validação de entrada", correct: false },
+      { letter: "D", text: "Codificação de saída (Output encoding)", correct: true },
+    ],
+    explanation: "A codificação de saída é uma técnica defensiva primária contra ataques de cross-site scripting (XSS). Ao garantir que a entrada do usuário exibida em uma página web seja tratada como dado em vez de código executável, a codificação de saída impede a execução de scripts maliciosos.",
+  },
+
+  {
+    id: 243,
+    category: "Codificação Segura",
+    question: "Uma empresa de desenvolvimento web está trabalhando em um site de comércio eletrônico e deseja garantir que o conteúdo gerado pelo usuário, como avaliações de produtos, não introduza vulnerabilidades de segurança. Portanto, eles seguem as melhores práticas de codificação segura e implementam codificação de saída para mitigar riscos potenciais. Que resultado a empresa pode esperar da implementação correta da codificação de saída?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Validar automaticamente a entrada do usuário antes de armazená-la no banco de dados", correct: false },
+      { letter: "B", text: "Codificar caracteres especiais em conteúdo gerado pelo usuário", correct: true },
+      { letter: "C", text: "Proteger a aplicação contra ataques de SQL injection", correct: false },
+      { letter: "D", text: "Garantir que a entrada do usuário seja armazenada em uma consulta parametrizada", correct: false },
+    ],
+    explanation: "A abordagem correta é prevenir ataques de cross-site scripting (XSS) codificando caracteres especiais no conteúdo gerado pelo usuário. A codificação de saída garante que caracteres especiais no conteúdo gerado pelo usuário sejam codificados com segurança, evitando que scripts maliciosos sejam executados pelo navegador.",
+  },
+
+  {
+    id: 244,
+    category: "Vulnerabilidades de Memória",
+    question: "Uma aplicação web que permite aos usuários carregar imagens em seu perfil possui uma vulnerabilidade de segurança. Um atacante pode carregar uma imagem especialmente elaborada, fazendo com que a aplicação web tente gravar dados além do final de uma porção de memória alocada dinamicamente durante o tempo de execução. A aplicação não lida adequadamente com o estouro, permitindo que o atacante execute código arbitrário no servidor. Que tipo de vulnerabilidade esta situação descreve? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Buffer overflow", correct: true },
+      { letter: "B", text: "Stack overflow", correct: false },
+      { letter: "C", text: "Integer overflow", correct: false },
+      { letter: "D", text: "Heap overflow", correct: true },
+    ],
+    explanation: "Heap overflow é uma vulnerabilidade de software onde o sistema permite que a entrada sobrescreva locais de memória dentro da área de alocação de memória de um processo (variáveis de tamanho dinâmico). Buffer overflow é um termo geral que se refere tanto a estouros de heap quanto de pilha (stack overflows).",
+  },
+
+  {
+    id: 245,
+    category: "Server-Side Request Forgery (SSRF)",
+    question: "Um pesquisador de segurança descobriu uma vulnerabilidade em uma aplicação web que permite a um atacante fazer solicitações a recursos internos ou externos em nome do servidor web. Qual das seguintes vulnerabilidades web melhor descreve este cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Cross-Site Scripting (XSS)", correct: false },
+      { letter: "B", text: "Cross-Site Request Forgery (CSRF)", correct: false },
+      { letter: "C", text: "Structured Query Language (SQL) injection", correct: false },
+      { letter: "D", text: "Server-Side Request Forgery (SSRF)", correct: true },
+    ],
+    explanation: "Server-Side Request Forgery (SSRF) é um tipo de vulnerabilidade web que permite a um atacante solicitar recursos internos ou externos em nome do servidor web.",
+  },
+
+  {
+    id: 246,
+    category: "Frameworks de Segurança Web",
+    question: "Um desenvolvedor web em uma empresa iniciante está construindo uma nova aplicação web. O desenvolvedor deseja garantir que a aplicação esteja segura contra vários tipos de ataques. Qual dos seguintes frameworks seria o mais apropriado para o desenvolvedor web utilizar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "International Organization for Standardization (ISO) 27001/27002", correct: false },
+      { letter: "B", text: "Open Source Security Testing Methodology Manual (OSSTMM)", correct: false },
+      { letter: "C", text: "Control Objectives for Information and related Technology (COBIT)", correct: false },
+      { letter: "D", text: "OWASP Web Security Testing Guide", correct: true },
+    ],
+    explanation: "O OWASP Web Security Testing Guide é um guia abrangente para testes de segurança de aplicações web. Ele fornece diretrizes, melhores práticas e recursos para desenvolvedores web garantirem que suas aplicações estejam seguras contra vários tipos de ataques.",
+  },
+
+  {
+    id: 247,
+    category: "Segurança em APIs e Web Services",
+    question: "Uma empresa está desenvolvendo uma nova API para seu serviço de comércio eletrônico. A equipe de desenvolvimento quer garantir que a API seja resiliente contra ataques de negação de serviço (DoS) e abuso de recursos. Qual dos seguintes controles é o mais eficaz para mitigar esse risco em uma API?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Criptografia SSL/TLS", correct: false },
+      { letter: "B", text: "Implementação de limite de taxa (Rate limiting)", correct: false },
+      { letter: "C", text: "Validação rigorosa de parâmetros", correct: true },
+      { letter: "D", text: "Uso de autenticação baseada em tokens", correct: false },
+    ],
+    explanation: "Nota: No texto original, a alternativa C foi marcada como correta. A limitação de taxa (Rate limiting) e validação rigorosa de parâmetros ajudam a proteger contra abusos e ataques de negação de serviço.",
+  },
+
+  {
+    id: 248,
+    category: "Vulnerabilidades de Injeção",
+    question: "Um analista de segurança está realizando testes de penetração em um sistema de gerenciamento de banco de dados e descobre que o aplicativo constrói consultas SQL concatenando diretamente a entrada do usuário sem a devida higienização. Qual vulnerabilidade está presente neste cenário?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Cross-Site Scripting (XSS)", correct: false },
+      { letter: "B", text: "SQL Injection", correct: true },
+      { letter: "C", text: "Command Injection", correct: false },
+      { letter: "D", text: "XML External Entity (XXE)", correct: false },
+    ],
+    explanation: "SQL Injection ocorre quando entradas fornecidas pelo usuário são concatenadas diretamente em comandos SQL sem validação ou parametrização adequada, permitindo que atacantes executem comandos arbitrários no banco de dados.",
+  },
+
+  {
+    id: 249,
+    category: "Gerenciamento de Sessão",
+    question: "Durante uma auditoria de segurança em uma aplicação web corporativa, o testador observa que os cookies de sessão não possuem o atributo 'HttpOnly'. Qual risco principal esta configuração incorreta introduz?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Facilita ataques de interceptação de rede (Man-in-the-Middle)", correct: false },
+      { letter: "B", text: "Permite que scripts maliciosos em JavaScript acessem o cookie de sessão (ex: via XSS)", correct: true },
+      { letter: "C", text: "Permite ataques de CSRF diretamente", correct: false },
+      { letter: "D", text: "Causa expiração prematura da sessão do usuário", correct: false },
+    ],
+    explanation: "O atributo HttpOnly impede que scripts do lado do cliente (como JavaScript) acessem o cookie de sessão através de documentos como document.cookie, mitigando consideravelmente o impacto de vulnerabilidades de XSS no roubo de sessões.",
+  },
+
+  {
+    id: 250,
+    category: "Controle de Acesso",
+    question: "Um administrador de sistemas implementou controle de acesso baseado em funções (RBAC) em uma aplicação corporativa. No entanto, um usuário comum conseguiu acessar dados administrativos alterando parâmetros na URL. Como é chamada esta vulnerabilidade de controle de acesso?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Broken Object Level Authorization (BOLA / IDOR)", correct: true },
+      { letter: "B", text: "Cross-Site Request Forgery", correct: false },
+      { letter: "C", text: "Server-Side Request Forgery", correct: false },
+      { letter: "D", text: "Broken Authentication", correct: false },
+    ],
+    explanation: "O acesso a recursos não autorizados através da manipulação de parâmetros de identificação de objetos (como IDs na URL) é conhecido como IDOR (Insecure Direct Object Reference) ou BOLA (Broken Object Level Authorization).",
+  },
+
+  {
+    id: 251,
+    category: "Segurança de Aplicações e Criptografia",
+    question: "Uma organização armazena senhas de usuários em seu banco de dados e deseja adotar o padrão recomendado para armazenamento seguro de senhas. Qual das seguintes abordagens criptográficas ou de hash é a mais adequada?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Criptografia AES-256 reversível", correct: false },
+      { letter: "B", text: "Uso de hash SHA-256 simples sem salt", correct: false },
+      { letter: "C", text: "Uso de funções de derivação de chave com salt (como bcrypt, Argon2 ou PBKDF2)", correct: true },
+      { letter: "D", text: "Codificação Base64", correct: false },
+    ],
+    explanation: "Senhas nunca devem ser armazenadas em texto plano ou criptografadas reversivelmente. Devem ser utilizadas funções hash lentas com salt (como bcrypt, Argon2 ou PBKDF2) para resistir a ataques de força bruta e rainbow tables.",
+  },
+
+  {
+    id: 252,
+    category: "Ciclo de Vida de Desenvolvimento (SDLC)",
+    question: "Uma empresa de desenvolvimento de software já incluiu os estágios de planejamento, implementação, testes e manutenção em seu ciclo de vida de desenvolvimento de software (SDLC). Quais dos seguintes estágios a empresa NÃO incluiu? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Implementação", correct: false },
+      { letter: "B", text: "Manutenção", correct: false },
+      { letter: "C", text: "Análise de requisitos", correct: true },
+      { letter: "D", text: "Design (Projeto)", correct: true },
+    ],
+    explanation: "O SDLC tradicional inclui Fases como Análise de Requisitos, Design, Implementação, Testes, Implantação e Manutenção. O enunciado menciona planejamento, implementação, testes e manutenção, faltando portanto Análise de Requisitos e Design.",
+  },
+
+  {
+    id: 253,
+    category: "Recursos OWASP",
+    question: "Uma organização encarregou um administrador de rede de melhorar a segurança de suas aplicações web. O administrador decide consultar os recursos do OWASP para identificar e corrigir vulnerabilidades. Quais das seguintes são metas principais desses recursos? (Selecione as três melhores opções.)",
+    multipleChoice: true,
+    selectCount: 3,
+    options: [
+      { letter: "A", text: "Fornecer guias e ferramentas de testes de segurança web", correct: true },
+      { letter: "B", text: "Identificar os principais riscos de segurança em aplicações web (ex: OWASP Top 10)", correct: true },
+      { letter: "C", text: "Promover práticas de codificação segura e conscientização", correct: true },
+      { letter: "D", text: "Fornecer licenças de software comercial proprietário", correct: false },
+    ],
+    explanation: "Os recursos do OWASP concentram-se em conscientização de segurança, publicação do Top 10 de riscos críticos, guias de testes (WSTG) e ferramentas para melhoria da segurança em aplicações web.",
+  },
+
+  {
+    id: 254,
+    category: "Vulnerabilidades Web e Injeção",
+    question: "Um analista de testes de segurança identifica que uma aplicação web permite a injeção de comandos de sistema operacional através de campos de entrada mal sanitizados. Qual é o principal risco associado a esta vulnerabilidade?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Execução arbitrária de comandos no sistema operacional do servidor", correct: true },
+      { letter: "B", text: "Roubo de cookies de sessão via XSS refletido", correct: false },
+      { letter: "C", text: "Modificação de endereços de memória na pilha (stack)", correct: false },
+      { letter: "D", text: "Falsificação de requisições do lado do servidor para redes internas", correct: false },
+    ],
+    explanation: "A injeção de comandos (Command Injection) ocorre quando dados fornecidos pelo usuário são executados diretamente pelo interpretador de comandos do sistema operacional subjacente, levando à execução arbitrária de comandos.",
+  },
+
+  {
+    id: 255,
+    category: "Vulnerabilidades Web (Directory Traversal)",
+    question: "Um analista de segurança está examinando um incidente em que um atacante explorou uma aplicação web para obter acesso não autorizado a arquivos e recursos no servidor. O atacante manipulou a entrada do usuário para incluir arquivos externos ou percorrer a estrutura de diretórios do servidor. Quais termos melhor descrevem essas vulnerabilidades? (Selecione as duas melhores opções.)",
+    multipleChoice: true,
+    selectCount: 2,
+    options: [
+      { letter: "A", text: "Cross-Site Scripting", correct: false },
+      { letter: "B", text: "SQL Injection", correct: false },
+      { letter: "C", text: "Directory Traversal (Path Traversal)", correct: true },
+      { letter: "D", text: "Local File Inclusion (LFI)", correct: true },
+    ],
+    explanation: "A manipulação de caminhos para acessar arquivos restritos em diretórios do servidor é chamada de Directory Traversal (ou Path Traversal) e inclusão de arquivos locais (Local File Inclusion - LFI).",
+  },
+
+  {
+    id: 256,
+    category: "Cabeçalhos de Segurança HTTP",
+    question: "Qual cabeçalho de resposta HTTP é recomendado para mitigar ataques de Cross-Site Scripting (XSS) e injeção de conteúdo, permitindo que os administradores restrinjam os recursos (como scripts, imagens, estilos) que o navegador tem permissão para carregar?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Strict-Transport-Security (HSTS)", correct: false },
+      { letter: "B", text: "Content Security Policy (CSP)", correct: true },
+      { letter: "C", text: "X-Frame-Options", correct: false },
+      { letter: "D", text: "X-Content-Type-Options", correct: false },
+    ],
+    explanation: "A Content Security Policy (CSP) é um cabeçalho HTTP que permite aos operadores de sites restringir os recursos que podem ser carregados e executados pelo navegador, mitigando eficazmente ataques XSS e de injeção de dados.",
+  },
+
+  {
+    id: 257,
+    category: "Mitigação de Envenenamento de Dados (Data Poisoning)",
+    question: "Quais das seguintes são técnicas de mitigação válidas para combater o envenenamento de dados (data poisoning) em modelos de aprendizado de máquina? (Selecione as três melhores opções.)",
+    multipleChoice: true,
+    selectCount: 3,
+    options: [
+      { letter: "A", text: "Data diversity (Diversidade de dados)", correct: true },
+      { letter: "B", text: "Anomaly detection (Detecção de anomalias)", correct: true },
+      { letter: "C", text: "Data validation and sanitation (Validação e sanitização de dados)", correct: true },
+      { letter: "D", text: "Desativação completa de atualizações de modelo", correct: false },
+    ],
+    explanation: "Para combater o envenenamento de dados, utilizam-se validação rigorosa de dados de entrada, diversidade de fontes de dados e detecção de anomalias para identificar amostras maliciosas inseridas no conjunto de treinamento.",
+  },
+
+  {
+    id: 258,
+    category: "Segurança de Contêineres e Microsserviços",
+    question: "Ao projetar uma arquitetura baseada em microsserviços conteinerizados, qual prática recomendada de segurança deve ser adotada para minimizar o impacto de um comprometimento de contêiner?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Executar todos os processos de contêiner com privilégios de root", correct: false },
+      { letter: "B", text: "Aplicar o princípio do privilégio mínimo e executar contêineres com usuários não-root", correct: true },
+      { letter: "C", text: "Desabilitar completamente o isolamento de namespaces", correct: false },
+      { letter: "D", text: "Compartilhar o socket do Docker diretamente com todos os contêineres", correct: false },
+    ],
+    explanation: "Executar contêineres com privilégios mínimos e utilizando contas de usuário não-root reduz consideravelmente a superfície de ataque e impede que um invasor obtenha controle total do host em caso de escape ou comprometimento do contêiner.",
+  },
+
+  {
+    id: 259,
+    category: "Análise de Vulnerabilidades e Exploração",
+    question: "Um testador de penetração identifica que uma aplicação web permite a execução de comandos arbitrários no sistema operacional através de uma falha de injeção. Qual é o resultado mais provável desta vulnerabilidade?",
+    multipleChoice: false,
+    options: [
+      { letter: "A", text: "Comprometimento total do servidor e execução de comandos remotos (RCE)", correct: true },
+      { letter: "B", text: "Apenas alteração de estilos CSS na interface", correct: false },
+      { letter: "C", text: "Vazamento restrito de arquivos de configuração estáticos, sem execução", correct: false },
+      { letter: "D", text: "Apenas injeção de consultas SQL inofensivas", correct: false },
+    ],
+    explanation: "A execução de comandos arbitrários no sistema operacional através de vulnerabilidades de injeção resulta em Execução Remota de Código (RCE), permitindo que o atacante controle o sistema hospedeiro.",
+  },
 ];
