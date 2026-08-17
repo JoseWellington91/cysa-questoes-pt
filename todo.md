@@ -13,3 +13,6 @@
 - [x] Mapear as questões aos quatro domínios oficiais do exame CySA+ V3 e definir a prova de 85 itens.
 - [x] Implementar o Modo Simulado aleatório sem alterar o Modo Estudo.
 - [x] Validar a distribuição, gerar o build, publicar e verificar a URL pública.
+- [ ] Reproduzir e identificar a causa do bloqueio na finalização do Simulado Oficial.
+- [ ] Corrigir o fluxo de finalização exclusivamente no Modo Simulado.
+- [ ] Validar o término da prova, gerar o build e publicar a correção.

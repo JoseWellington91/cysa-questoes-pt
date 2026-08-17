@@ -554,7 +554,7 @@ export default function Home() {
               ) : (
                 <Button
                   onClick={() => setShowResults(true)}
-                  disabled={examMode ? submittedCount < totalQuestions : submittedCount === 0}
+                  disabled={examMode ? answeredCount < totalQuestions : submittedCount === 0}
                   className="font-mono-display text-sm"
                 >
                   <Trophy className="w-4 h-4 mr-1.5" />
